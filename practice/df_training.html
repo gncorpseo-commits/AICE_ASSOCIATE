@@ -61,15 +61,59 @@
           디버그 로그 활성화
         </label>
         <button id="adminClearLog" class="admin-btn">로그 초기화</button>
+        <button id="adminRunTests" class="admin-btn">메서드 테스트 실행</button>
+        <button id="adminCopyTest" class="admin-btn">테스트 결과 복사</button>
       </div>
       <div class="admin-info">
         <div>마지막 이벤트: <span id="adminLastEvent">-</span></div>
         <div>렌더 카운트: <span id="adminRenderCount">0</span></div>
         <div>토글 로드 성공: <span id="adminToggleLoaded">0</span></div>
+        <div>첫 렌더(ms): <span id="adminFirstRenderMs">-</span></div>
+        <div>마지막 토글(ms): <span id="adminLastToggleMs">-</span></div>
         <div>토글 이벤트 상태: <span id="adminToggleEvent">-</span></div>
         <div>토글 캡처링: <span id="adminToggleCapture">-</span></div>
       </div>
       <pre id="adminLog" class="admin-log"></pre>
+      <div class="admin-test-title">테스트 결과</div>
+      <pre id="adminTestResult" class="admin-log"></pre>
+    </section>
+
+    <section class="section" id="uxFeedback">
+      <h2>사용자 체감 피드백</h2>
+      <div class="feedback-grid">
+        <label>속도 체감
+          <select id="uxSpeed">
+            <option value="5">매우 빠름</option>
+            <option value="4">빠름</option>
+            <option value="3" selected>보통</option>
+            <option value="2">느림</option>
+            <option value="1">매우 느림</option>
+          </select>
+        </label>
+        <label>문제 흐름
+          <select id="uxFlow">
+            <option value="5">매우 좋음</option>
+            <option value="4">좋음</option>
+            <option value="3" selected>보통</option>
+            <option value="2">불편함</option>
+            <option value="1">매우 불편함</option>
+          </select>
+        </label>
+        <label>노트북 연동
+          <select id="uxNotebook">
+            <option value="5">매우 좋음</option>
+            <option value="4">좋음</option>
+            <option value="3" selected>보통</option>
+            <option value="2">불편함</option>
+            <option value="1">매우 불편함</option>
+          </select>
+        </label>
+      </div>
+      <label class="feedback-notes">추가 의견
+        <textarea id="uxNotes" rows="3" placeholder="불편했던 점이나 개선점을 적어주세요."></textarea>
+      </label>
+      <button id="uxSave" class="admin-btn">피드백 저장</button>
+      <div class="feedback-last">최근 저장: <span id="uxLastSaved">-</span></div>
     </section>
 
     <p class="footer-note">

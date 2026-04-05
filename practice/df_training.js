@@ -223,8 +223,21 @@ let adminRenderCountEl = null;
 let adminToggleLoadedEl = null;
 let adminDebugToggleEl = null;
 let adminClearLogEl = null;
+let adminRunTestsEl = null;
+let adminCopyTestEl = null;
+let adminTestResultEl = null;
+let adminFirstRenderMsEl = null;
+let adminLastToggleMsEl = null;
+let uxSpeedEl = null;
+let uxFlowEl = null;
+let uxNotebookEl = null;
+let uxNotesEl = null;
+let uxSaveEl = null;
+let uxLastSavedEl = null;
 const ADMIN_LOG_MAX = 200;
 let currentQuestionId = null;
+const sessionStart = performance.now();
+let firstRenderMs = null;
 
 function renderDatasets() {
   const container = document.getElementById("datasetList");
@@ -385,6 +398,10 @@ function renderNextBatch() {
   updateAdminRenderCount();
   adminLog("render_batch", { added: next.length, renderedCount });
   if (next.length > 0) currentQuestionId = next[next.length - 1].id;
+  if (firstRenderMs === null) {
+    firstRenderMs = Math.round(performance.now() - sessionStart);
+    updateAdminTimings();
+  }
 }
 
 function resetInfiniteScroll() {
@@ -439,6 +456,11 @@ function initAdminModule() {
   adminToggleLoadedEl = document.getElementById("adminToggleLoaded");
   adminDebugToggleEl = document.getElementById("adminDebugToggle");
   adminClearLogEl = document.getElementById("adminClearLog");
+  adminRunTestsEl = document.getElementById("adminRunTests");
+  adminCopyTestEl = document.getElementById("adminCopyTest");
+  adminTestResultEl = document.getElementById("adminTestResult");
+  adminFirstRenderMsEl = document.getElementById("adminFirstRenderMs");
+  adminLastToggleMsEl = document.getElementById("adminLastToggleMs");
   const adminToggleEventEl = document.getElementById("adminToggleEvent");
   const adminToggleCaptureEl = document.getElementById("adminToggleCapture");
 
@@ -456,8 +478,32 @@ function initAdminModule() {
     if (adminLogEl) adminLogEl.textContent = "";
   });
 
+  if (adminRunTestsEl) {
+    adminRunTestsEl.addEventListener("click", () => {
+      const result = runMethodTests();
+      if (adminTestResultEl) adminTestResultEl.textContent = result;
+    });
+  }
+
+  if (adminCopyTestEl) {
+    adminCopyTestEl.addEventListener("click", () => {
+      if (!adminTestResultEl) return;
+      const text = adminTestResultEl.textContent || "";
+      if (!text) {
+        alert("복사할 테스트 결과가 없습니다.");
+        return;
+      }
+      navigator.clipboard.writeText(text).then(() => {
+        alert("테스트 결과가 클립보드에 복사되었습니다.");
+      }).catch(() => {
+        alert("복사에 실패했습니다. 수동으로 복사해 주세요.");
+      });
+    });
+  }
+
   updateAdminRenderCount();
   updateAdminToggleLoaded();
+  updateAdminTimings();
 
   if (adminToggleEventEl) {
     adminToggleEventEl.textContent = "ready";
@@ -487,6 +533,70 @@ function updateAdminToggleLoaded() {
   if (adminToggleLoadedEl) adminToggleLoadedEl.textContent = String(adminToggleLoaded);
 }
 
+function updateAdminTimings() {
+  if (adminFirstRenderMsEl) {
+    adminFirstRenderMsEl.textContent = firstRenderMs === null ? "-" : `${firstRenderMs}ms`;
+  }
+}
+
+function updateLastToggleMs(ms) {
+  if (adminLastToggleMsEl) adminLastToggleMsEl.textContent = `${ms}ms`;
+}
+
+function getFirstDetails(section) {
+  return document.querySelector(`#questionList details[data-section="${section}"]`);
+}
+
+function runToggleTest(section) {
+  const detail = getFirstDetails(section);
+  if (!detail) return { section, ok: false, reason: "details_not_found" };
+  const beforeLoaded = detail.dataset.loaded === "true";
+  const start = performance.now();
+  detail.open = true;
+  const afterLoaded = detail.dataset.loaded === "true";
+  const ms = Math.round(performance.now() - start);
+  return { section, ok: afterLoaded, beforeLoaded, ms };
+}
+
+function runRenderTest() {
+  const before = renderedCount;
+  renderNextBatch();
+  const after = renderedCount;
+  return { before, after, added: after - before };
+}
+
+function runMethodTests() {
+  const results = [];
+  results.push({ name: "render_next_batch", ...runRenderTest() });
+  results.push({ name: "toggle_hint", ...runToggleTest("hint") });
+  results.push({ name: "toggle_answer", ...runToggleTest("answer") });
+  results.push({ name: "toggle_solution", ...runToggleTest("solution") });
+  const stamp = new Date().toLocaleString();
+  const summary = {
+    time: stamp,
+    renderedCount,
+    firstRenderMs,
+    lastToggleMs: adminLastToggleMsEl ? adminLastToggleMsEl.textContent : "-"
+  };
+  const output = [
+    `# method_test_report`,
+    `time: ${summary.time}`,
+    `renderedCount: ${summary.renderedCount}`,
+    `firstRenderMs: ${summary.firstRenderMs === null ? "-" : summary.firstRenderMs + "ms"}`,
+    `lastToggleMs: ${summary.lastToggleMs}`,
+    `results:`,
+    ...results.map(r => `- ${r.name}: ${JSON.stringify(r)}`)
+  ].join("\n");
+  adminLog("method_tests", { results });
+  return output;
+}
+
+window.MethodTests = {
+  run: runMethodTests,
+  render: runRenderTest,
+  toggle: runToggleTest
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   renderDatasets();
   initFilters();
@@ -494,6 +604,7 @@ document.addEventListener("DOMContentLoaded", () => {
   filteredQuestions = questions;
   initInfiniteScroll();
   initAdminModule();
+  initUxFeedback();
   resetInfiniteScroll();
 });
 
@@ -537,8 +648,15 @@ document.getElementById("openNotebookLink").addEventListener("click", () => {
 });
 
 document.getElementById("openColabLink").addEventListener("click", () => {
+  const q = questionMap.get(currentQuestionId);
+  if (!q) {
+    alert("현재 표시된 문제가 없습니다.");
+    return;
+  }
+  downloadNotebook(q);
   const url = "https://colab.research.google.com/github/gncorpseo-commits/AICE_ASSOCIATE/blob/main/practice/df_training.ipynb";
   window.open(url, "_blank", "noopener,noreferrer");
+  alert("다운로드된 .ipynb 파일을 Colab에서 업로드해서 실행하세요.");
 });
 
 document.getElementById("questionList").addEventListener("toggle", (e) => {
@@ -552,9 +670,42 @@ document.getElementById("questionList").addEventListener("toggle", (e) => {
   if (!q) return;
   const body = target.querySelector(".detail-body");
   if (!body) return;
+  const toggleStart = performance.now();
   body.innerHTML = renderDetailBody(q, section);
   target.dataset.loaded = "true";
+  const toggleMs = Math.round(performance.now() - toggleStart);
   adminToggleLoaded += 1;
   updateAdminToggleLoaded();
+  updateLastToggleMs(toggleMs);
   adminLog("toggle_loaded", { id, section });
 }, true);
+
+function initUxFeedback() {
+  uxSpeedEl = document.getElementById("uxSpeed");
+  uxFlowEl = document.getElementById("uxFlow");
+  uxNotebookEl = document.getElementById("uxNotebook");
+  uxNotesEl = document.getElementById("uxNotes");
+  uxSaveEl = document.getElementById("uxSave");
+  uxLastSavedEl = document.getElementById("uxLastSaved");
+  if (!uxSaveEl) return;
+  const saved = localStorage.getItem("df_training_ux_feedback");
+  if (saved) {
+    const data = JSON.parse(saved);
+    uxSpeedEl.value = data.speed || "3";
+    uxFlowEl.value = data.flow || "3";
+    uxNotebookEl.value = data.notebook || "3";
+    uxNotesEl.value = data.notes || "";
+    uxLastSavedEl.textContent = data.savedAt || "-";
+  }
+  uxSaveEl.addEventListener("click", () => {
+    const payload = {
+      speed: uxSpeedEl.value,
+      flow: uxFlowEl.value,
+      notebook: uxNotebookEl.value,
+      notes: uxNotesEl.value.trim(),
+      savedAt: new Date().toLocaleString()
+    };
+    localStorage.setItem("df_training_ux_feedback", JSON.stringify(payload));
+    uxLastSavedEl.textContent = payload.savedAt;
+  });
+}
