@@ -311,6 +311,9 @@ function renderNotebookGuide(q) {
   const cols = q.detail.columns || {};
   const target = cols.num || cols.cat || "target";
   const datasetFile = datasets.find(d => d.id === q.datasetId)?.file || "datasets/iris.csv";
+  const localPath = `practice/${datasetFile}`;
+  const remoteBase = "https://raw.githubusercontent.com/gncorpseo-commits/AICE_ASSOCIATE/main/";
+  const remoteUrl = `${remoteBase}${localPath}`;
   const problem = [
     `# 문제 (KR)`,
     q.problemKo,
@@ -339,8 +342,12 @@ function renderNotebookGuide(q) {
   ].join("\\n");
   const loader = [
     "# 데이터 로딩",
+    "import os",
     "import pandas as pd",
-    `df = pd.read_csv('practice/datasets/${datasetFile}')`,
+    `LOCAL_PATH = "${localPath}"`,
+    `REMOTE_URL = "${remoteUrl}"`,
+    "DATASET_PATH = LOCAL_PATH if os.path.exists(LOCAL_PATH) else REMOTE_URL",
+    "df = pd.read_csv(DATASET_PATH)",
     "df.head()",
     "",
     "# Suggested target/feature split",
@@ -653,10 +660,9 @@ document.getElementById("openColabLink").addEventListener("click", () => {
     alert("현재 표시된 문제가 없습니다.");
     return;
   }
-  downloadNotebook(q);
   const url = "https://colab.research.google.com/github/gncorpseo-commits/AICE_ASSOCIATE/blob/main/practice/df_training.ipynb";
   window.open(url, "_blank", "noopener,noreferrer");
-  alert("다운로드된 .ipynb 파일을 Colab에서 업로드해서 실행하세요.");
+  alert("Colab에서 GitHub 노트북을 바로 엽니다. 데이터는 GitHub Raw URL로 로드됩니다.");
 });
 
 document.getElementById("questionList").addEventListener("toggle", (e) => {
