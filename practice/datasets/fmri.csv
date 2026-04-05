@@ -1,0 +1,11 @@
+subject,timepoint,event,region,signal
+1,1,stim,frontal,0.017
+1,2,stim,frontal,0.025
+1,3,stim,frontal,0.037
+1,1,stim,parietal,0.012
+1,2,stim,parietal,0.018
+2,1,stim,frontal,0.021
+2,2,stim,frontal,0.030
+2,3,stim,frontal,0.045
+2,1,stim,parietal,0.014
+2,2,stim,parietal,0.020

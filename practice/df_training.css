@@ -1,0 +1,261 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+header {
+  text-align: center;
+  padding: 24px 0 12px;
+}
+
+header h1 {
+  margin: 0 0 8px;
+  font-size: 2.2rem;
+  color: #38bdf8;
+}
+
+header p {
+  margin: 4px 0;
+  color: #94a3b8;
+}
+
+.section {
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 18px;
+}
+
+.section h2 {
+  margin: 0 0 12px;
+  font-size: 1.3rem;
+  color: #7dd3fc;
+}
+
+.dataset-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.dataset-card {
+  border: 1px solid #1f2937;
+  background: #0b1220;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.dataset-card h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  color: #e2e8f0;
+}
+
+.dataset-card p {
+  margin: 4px 0;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.dataset-card a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+.dataset-card .download {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 10px;
+  background: #1e293b;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.filters select,
+.filters input {
+  background: #0b1220;
+  color: #e2e8f0;
+  border: 1px solid #1f2937;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.stat-line {
+  margin-top: 10px;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.question {
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 12px;
+  background: #0b1220;
+}
+
+.question h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.question .meta {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 8px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  margin-right: 6px;
+}
+
+.tag.easy { background: #14532d; color: #dcfce7; }
+.tag.medium { background: #854d0e; color: #fef9c3; }
+.tag.hard { background: #7f1d1d; color: #fee2e2; }
+
+details {
+  background: #0f172a;
+  border: 1px solid #1f2937;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-top: 8px;
+}
+
+details summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+pre {
+  background: #0b1220;
+  padding: 10px;
+  border-radius: 8px;
+  overflow-x: auto;
+  color: #e2e8f0;
+}
+
+.footer-note {
+  color: #64748b;
+  text-align: center;
+  font-size: 0.85rem;
+  margin-top: 24px;
+}
+
+#scrollSentinel {
+  height: 1px;
+}
+
+#loadingStatus {
+  margin-top: 10px;
+}
+
+.admin-panel {
+  border: 1px solid #334155;
+  background: #0b1220;
+}
+
+.admin-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.admin-toggle {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  color: #e2e8f0;
+}
+
+.admin-btn {
+  background: #1e293b;
+  color: #e2e8f0;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.admin-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 8px;
+  margin-bottom: 10px;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.admin-log {
+  background: #0f172a;
+  border: 1px solid #1f2937;
+  border-radius: 8px;
+  padding: 8px;
+  max-height: 200px;
+  overflow: auto;
+  white-space: pre-wrap;
+  font-size: 0.85rem;
+}
+
+.notebook-btn {
+  margin-top: 8px;
+  background: #1e293b;
+  color: #e2e8f0;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.notebook-btn:hover {
+  background: #273449;
+}
+
+.notebook-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.notebook-guide {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px dashed #334155;
+  border-radius: 8px;
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+.notebook-guide code {
+  color: #e2e8f0;
+}
+
+.guide-note {
+  margin-top: 6px;
+  color: #64748b;
+}

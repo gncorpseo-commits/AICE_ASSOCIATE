@@ -1,0 +1,1001 @@
+customer_id,age,income_bracket,past_purchases,email_opens,website_visits,days_since_last_purchase,campaign_type,offer_type,responded
+1,32,High,21,8.0,13,,Email,Loyalty points,1
+2,58,Medium,15,2.0,3,277.0,Email,Loyalty points,0
+3,26,Medium,45,7.0,25,286.0,Push,Discount,0
+4,50,High,2,3.0,7,77.0,Email,Free shipping,0
+5,50,Medium,5,18.0,24,211.0,Call,Discount,0
+6,57,High,35,2.0,6,155.0,SMS,Free shipping,0
+7,67,High,31,17.0,26,28.0,Email,Loyalty points,0
+8,25,Medium,49,10.0,10,63.0,Push,Discount,0
+9,63,High,11,11.0,1,73.0,Call,Free shipping,0
+10,30,High,37,12.0,4,184.0,Push,Discount,0
+11,33,Medium,6,11.0,23,148.0,SMS,Discount,1
+12,29,Medium,43,5.0,19,173.0,Call,Free shipping,0
+13,46,Low,3,6.0,5,243.0,Email,Discount,0
+14,39,Medium,13,0.0,19,15.0,Email,Discount,0
+15,43,High,46,13.0,4,233.0,SMS,Free shipping,1
+16,45,Medium,46,0.0,29,9.0,Push,Loyalty points,0
+17,44,Medium,2,14.0,1,65.0,Call,Free shipping,0
+18,29,High,17,16.0,9,144.0,Call,Free shipping,0
+19,40,Low,6,6.0,22,11.0,Email,Discount,0
+20,19,High,3,9.0,14,21.0,Call,Discount,0
+21,32,Medium,49,14.0,27,262.0,Email,Discount,0
+22,63,Medium,17,13.0,14,177.0,Email,Free shipping,0
+23,21,Low,5,9.0,29,341.0,Email,Loyalty points,0
+24,27,Low,17,15.0,25,263.0,Push,Free shipping,0
+25,60,Medium,24,2.0,1,130.0,Push,Discount,0
+26,66,Low,14,16.0,26,15.0,SMS,Discount,0
+27,44,High,10,18.0,0,37.0,SMS,Loyalty points,0
+28,63,Low,22,17.0,3,335.0,Call,Free shipping,1
+29,36,Medium,11,13.0,11,318.0,Email,Free shipping,0
+30,46,Medium,31,13.0,27,340.0,Email,Loyalty points,0
+31,24,Low,45,8.0,21,340.0,Email,Loyalty points,0
+32,62,High,36,15.0,19,39.0,Push,Loyalty points,1
+33,53,Medium,13,17.0,13,232.0,Email,Loyalty points,0
+34,57,Low,28,10.0,0,39.0,Email,Loyalty points,0
+35,21,High,26,9.0,11,302.0,Email,Discount,0
+36,40,Low,38,12.0,6,88.0,SMS,Loyalty points,0
+37,31,Low,46,7.0,14,319.0,SMS,Loyalty points,0
+38,58,Low,9,15.0,17,,SMS,Loyalty points,0
+39,38,Medium,45,11.0,8,163.0,Email,Discount,0
+40,22,High,15,5.0,19,207.0,Email,Loyalty points,0
+41,24,Low,1,19.0,21,75.0,SMS,Discount,1
+42,32,Medium,11,7.0,6,61.0,Email,Discount,0
+43,54,Low,1,4.0,13,288.0,Call,Discount,0
+44,19,High,4,8.0,27,193.0,Call,Discount,0
+45,53,Medium,35,14.0,6,292.0,Email,Loyalty points,1
+46,41,Medium,37,7.0,9,107.0,Email,Loyalty points,0
+47,51,High,35,5.0,21,355.0,Push,Discount,0
+48,53,Medium,21,1.0,2,245.0,Call,Loyalty points,0
+49,47,Medium,28,13.0,21,363.0,SMS,Loyalty points,0
+50,32,Low,20,9.0,7,230.0,Email,Loyalty points,0
+51,31,Low,6,,28,267.0,Email,Free shipping,0
+52,20,Low,22,,2,122.0,Call,Free shipping,0
+53,29,High,15,11.0,28,24.0,Call,Free shipping,0
+54,29,High,22,10.0,5,352.0,Email,Free shipping,1
+55,31,High,13,10.0,12,283.0,Call,Loyalty points,0
+56,53,Medium,23,2.0,9,335.0,Call,Free shipping,0
+57,58,High,40,9.0,27,151.0,Email,Discount,0
+58,43,Medium,45,8.0,8,354.0,Push,Loyalty points,0
+59,19,Low,29,2.0,25,298.0,Push,Free shipping,0
+60,45,Low,49,11.0,23,92.0,Email,Free shipping,0
+61,22,Low,22,7.0,8,294.0,Call,Free shipping,0
+62,41,Low,41,5.0,23,112.0,Push,Free shipping,0
+63,65,Low,32,13.0,17,236.0,SMS,Loyalty points,0
+64,68,High,13,2.0,4,80.0,Call,Free shipping,1
+65,44,Low,20,,20,331.0,SMS,Discount,0
+66,64,Medium,6,10.0,23,187.0,Push,Loyalty points,0
+67,49,Low,47,,27,94.0,Email,Loyalty points,0
+68,36,Medium,48,13.0,25,245.0,Call,Free shipping,0
+69,54,Medium,7,,22,162.0,Email,Discount,0
+70,39,High,28,0.0,23,318.0,Email,Loyalty points,1
+71,46,Medium,0,8.0,0,117.0,Push,Loyalty points,0
+72,25,Low,47,17.0,26,252.0,Call,Discount,0
+73,29,Low,36,7.0,28,172.0,Call,Loyalty points,0
+74,61,High,13,0.0,5,346.0,Email,Discount,0
+75,46,Low,46,3.0,3,358.0,SMS,Discount,0
+76,26,Low,27,15.0,21,197.0,Push,Free shipping,1
+77,69,High,40,10.0,7,291.0,Email,Free shipping,0
+78,69,High,31,15.0,10,5.0,SMS,Free shipping,0
+79,30,Low,30,7.0,29,358.0,SMS,Free shipping,1
+80,68,Medium,1,5.0,18,316.0,Push,Free shipping,0
+81,45,Medium,2,4.0,23,62.0,Email,Loyalty points,0
+82,61,Medium,12,9.0,17,300.0,Push,Free shipping,0
+83,24,Medium,7,10.0,9,290.0,Push,Discount,0
+84,38,Medium,42,10.0,3,197.0,SMS,Discount,0
+85,41,Low,30,3.0,0,229.0,SMS,Free shipping,1
+86,32,Low,48,6.0,18,139.0,SMS,Free shipping,0
+87,46,Low,49,1.0,24,263.0,Call,Free shipping,1
+88,46,Medium,10,19.0,21,79.0,Push,Loyalty points,0
+89,48,High,37,13.0,21,309.0,Push,Loyalty points,1
+90,54,High,23,17.0,13,282.0,Push,Discount,1
+91,27,High,12,0.0,13,262.0,SMS,Free shipping,0
+92,25,Low,47,16.0,21,264.0,Call,Free shipping,0
+93,26,Medium,9,1.0,7,215.0,SMS,Discount,0
+94,22,Medium,39,7.0,4,247.0,SMS,Free shipping,1
+95,36,Medium,25,0.0,4,189.0,Call,Discount,0
+96,25,High,25,15.0,26,180.0,SMS,Loyalty points,1
+97,41,Low,32,13.0,25,200.0,Call,Loyalty points,0
+98,18,High,14,11.0,22,41.0,SMS,Free shipping,0
+99,31,Low,23,16.0,27,143.0,Email,Loyalty points,0
+100,39,High,14,3.0,26,239.0,SMS,Discount,1
+101,23,Low,32,18.0,6,43.0,Call,Free shipping,0
+102,42,High,6,12.0,7,345.0,Email,Discount,0
+103,51,Medium,28,2.0,23,10.0,Push,Discount,0
+104,21,High,37,9.0,25,191.0,SMS,Free shipping,0
+105,35,Medium,18,7.0,21,150.0,Push,Free shipping,0
+106,64,High,18,6.0,13,227.0,Call,Discount,0
+107,21,Low,28,6.0,28,303.0,Push,Discount,0
+108,34,Medium,32,4.0,16,113.0,Call,Loyalty points,0
+109,46,Low,18,17.0,17,230.0,Call,Free shipping,0
+110,58,High,12,6.0,23,4.0,Push,Loyalty points,1
+111,58,High,40,10.0,25,2.0,SMS,Loyalty points,1
+112,43,Medium,18,7.0,12,195.0,Call,Free shipping,0
+113,23,Medium,36,15.0,10,15.0,Email,Free shipping,1
+114,45,Low,40,10.0,0,320.0,SMS,Free shipping,0
+115,52,Medium,1,16.0,11,88.0,Call,Discount,0
+116,38,Low,30,10.0,8,129.0,Email,Discount,1
+117,65,Medium,36,17.0,16,330.0,SMS,Loyalty points,0
+118,20,Low,8,9.0,7,279.0,Call,Free shipping,0
+119,51,High,13,6.0,19,,Email,Free shipping,1
+120,49,Medium,16,4.0,21,,Call,Discount,0
+121,27,Low,1,10.0,23,315.0,Call,Discount,0
+122,64,Medium,45,4.0,18,41.0,SMS,Free shipping,1
+123,45,Low,25,17.0,16,350.0,Push,Discount,0
+124,18,Low,19,1.0,18,48.0,Email,Loyalty points,0
+125,29,Medium,4,6.0,20,209.0,Push,Free shipping,0
+126,59,Medium,35,7.0,1,77.0,Call,Discount,0
+127,43,High,5,10.0,1,256.0,Call,Discount,0
+128,69,Low,16,9.0,14,,Push,Free shipping,1
+129,60,Medium,19,10.0,29,227.0,SMS,Discount,0
+130,19,Low,36,0.0,12,32.0,Email,Loyalty points,0
+131,38,Medium,26,6.0,14,80.0,Call,Discount,0
+132,24,High,31,1.0,9,272.0,SMS,Loyalty points,0
+133,49,Medium,9,7.0,14,249.0,Call,Loyalty points,0
+134,39,High,42,13.0,6,146.0,Push,Loyalty points,0
+135,26,Low,19,7.0,6,230.0,Email,Free shipping,0
+136,63,Low,0,12.0,10,246.0,Call,Loyalty points,1
+137,43,High,0,9.0,8,308.0,Push,Discount,0
+138,23,Medium,6,1.0,26,67.0,Push,Discount,1
+139,57,Medium,29,17.0,10,230.0,Email,Loyalty points,1
+140,42,Medium,23,16.0,28,187.0,Call,Loyalty points,0
+141,64,High,39,13.0,18,200.0,SMS,Free shipping,1
+142,37,Medium,18,2.0,2,156.0,Call,Loyalty points,0
+143,23,High,32,17.0,2,20.0,Push,Loyalty points,0
+144,44,High,14,7.0,11,48.0,SMS,Loyalty points,0
+145,23,Low,13,3.0,24,4.0,SMS,Discount,0
+146,30,Low,24,9.0,8,308.0,Call,Discount,1
+147,59,Low,48,17.0,11,339.0,Call,Free shipping,0
+148,69,Low,44,10.0,1,354.0,Push,Free shipping,0
+149,47,Low,22,9.0,26,173.0,Email,Free shipping,0
+150,46,Low,24,13.0,13,310.0,SMS,Discount,0
+151,64,Low,36,9.0,0,232.0,Call,Loyalty points,0
+152,56,High,7,11.0,24,221.0,SMS,Discount,0
+153,19,High,28,3.0,11,5.0,Call,Loyalty points,1
+154,26,High,26,5.0,7,78.0,SMS,Loyalty points,0
+155,24,Medium,6,3.0,13,255.0,Email,Loyalty points,0
+156,49,Low,36,12.0,20,262.0,SMS,Loyalty points,0
+157,50,Medium,9,16.0,23,41.0,SMS,Free shipping,0
+158,42,Low,44,11.0,18,202.0,Push,Free shipping,0
+159,65,Medium,40,2.0,10,85.0,Push,Loyalty points,0
+160,56,High,15,8.0,29,208.0,Email,Discount,0
+161,64,High,13,10.0,19,190.0,Call,Free shipping,0
+162,41,Medium,37,13.0,19,147.0,Call,Free shipping,0
+163,39,High,20,17.0,1,114.0,Push,Loyalty points,0
+164,66,Medium,30,5.0,19,192.0,Email,Discount,1
+165,54,Low,4,6.0,0,211.0,Call,Free shipping,0
+166,22,High,9,14.0,7,348.0,SMS,Loyalty points,1
+167,36,High,44,7.0,14,116.0,Push,Free shipping,0
+168,32,Low,33,13.0,1,140.0,Email,Discount,0
+169,44,Low,46,19.0,8,171.0,Push,Free shipping,1
+170,34,High,10,9.0,27,80.0,Email,Discount,0
+171,18,High,13,14.0,28,131.0,Call,Free shipping,1
+172,51,Low,28,15.0,9,154.0,Push,Loyalty points,1
+173,48,High,7,9.0,27,263.0,Email,Free shipping,1
+174,61,High,49,4.0,25,286.0,Email,Free shipping,0
+175,67,High,44,18.0,15,210.0,Email,Loyalty points,1
+176,37,High,10,3.0,23,151.0,Email,Discount,0
+177,35,Medium,11,2.0,14,284.0,Email,Loyalty points,0
+178,49,Medium,0,15.0,21,359.0,SMS,Loyalty points,1
+179,34,Medium,44,17.0,21,337.0,Email,Loyalty points,0
+180,54,Medium,24,6.0,11,118.0,Email,Free shipping,1
+181,64,Medium,5,6.0,19,81.0,Email,Free shipping,1
+182,61,High,12,5.0,29,330.0,Email,Discount,0
+183,25,Low,25,16.0,14,282.0,Call,Discount,0
+184,52,Medium,43,7.0,23,235.0,Push,Discount,0
+185,45,Low,43,14.0,29,26.0,SMS,Discount,0
+186,36,Low,28,13.0,7,300.0,SMS,Free shipping,0
+187,60,Low,26,19.0,17,312.0,Email,Loyalty points,0
+188,37,Medium,17,0.0,17,8.0,SMS,Free shipping,0
+189,50,High,47,14.0,16,358.0,Push,Loyalty points,1
+190,66,High,27,8.0,24,269.0,Email,Free shipping,0
+191,25,High,18,6.0,29,296.0,Email,Loyalty points,0
+192,49,Medium,27,4.0,18,264.0,Email,Loyalty points,1
+193,52,Low,2,10.0,0,242.0,Push,Free shipping,0
+194,39,Medium,3,4.0,28,305.0,SMS,Discount,0
+195,53,Medium,22,12.0,28,213.0,SMS,Free shipping,1
+196,55,Low,16,9.0,8,125.0,Email,Loyalty points,0
+197,41,Low,36,9.0,5,362.0,Push,Discount,0
+198,51,Low,24,2.0,1,43.0,Call,Loyalty points,0
+199,51,Low,36,5.0,24,71.0,Push,Free shipping,0
+200,25,Low,3,9.0,5,55.0,Email,Free shipping,0
+201,42,Medium,43,2.0,24,313.0,Push,Free shipping,0
+202,34,Low,41,14.0,13,327.0,Call,Discount,0
+203,65,High,7,5.0,22,9.0,Push,Free shipping,0
+204,56,High,9,18.0,2,69.0,Email,Loyalty points,0
+205,44,Low,20,0.0,16,,Push,Free shipping,0
+206,48,Low,22,5.0,17,62.0,SMS,Loyalty points,0
+207,39,Low,47,19.0,12,115.0,Call,Discount,1
+208,20,High,44,17.0,11,291.0,Email,Discount,0
+209,21,High,43,5.0,20,357.0,Email,Loyalty points,0
+210,41,Medium,42,2.0,16,325.0,Email,Discount,1
+211,35,Medium,32,19.0,2,344.0,Push,Loyalty points,0
+212,53,High,25,15.0,6,222.0,Push,Discount,1
+213,52,High,10,13.0,8,185.0,Call,Loyalty points,0
+214,33,Low,33,13.0,4,238.0,Push,Discount,0
+215,37,Medium,11,1.0,16,50.0,SMS,Free shipping,1
+216,27,High,28,6.0,22,46.0,SMS,Loyalty points,0
+217,20,Low,17,8.0,27,139.0,Call,Discount,0
+218,64,High,2,7.0,6,,SMS,Loyalty points,0
+219,28,Low,26,10.0,25,280.0,SMS,Loyalty points,0
+220,62,High,2,12.0,0,292.0,Email,Loyalty points,0
+221,45,Medium,45,8.0,6,91.0,SMS,Free shipping,1
+222,69,High,30,18.0,18,111.0,SMS,Free shipping,1
+223,64,High,49,11.0,4,240.0,SMS,Free shipping,0
+224,46,High,49,8.0,18,266.0,Push,Discount,0
+225,60,Low,18,11.0,8,362.0,Push,Free shipping,0
+226,28,High,7,17.0,16,12.0,Call,Loyalty points,0
+227,34,High,25,5.0,6,337.0,SMS,Free shipping,0
+228,33,High,13,14.0,29,248.0,SMS,Free shipping,1
+229,30,Medium,24,7.0,5,173.0,Email,Discount,0
+230,28,Medium,37,15.0,19,156.0,SMS,Discount,0
+231,54,High,2,7.0,23,338.0,Email,Free shipping,0
+232,45,Medium,4,12.0,1,326.0,Email,Free shipping,0
+233,30,Medium,14,12.0,20,332.0,Email,Free shipping,1
+234,29,High,0,9.0,23,155.0,SMS,Discount,0
+235,38,Low,44,12.0,3,267.0,SMS,Free shipping,1
+236,22,High,36,7.0,20,3.0,Email,Loyalty points,0
+237,48,Low,7,1.0,6,251.0,Push,Free shipping,1
+238,69,Low,44,8.0,3,1.0,Email,Discount,0
+239,31,High,33,10.0,1,249.0,Push,Discount,0
+240,24,Medium,24,0.0,8,90.0,Email,Discount,0
+241,31,Low,21,,26,17.0,Call,Discount,0
+242,31,Low,32,2.0,21,201.0,Push,Discount,0
+243,56,High,19,7.0,1,35.0,SMS,Discount,0
+244,46,Low,17,10.0,16,183.0,Email,Loyalty points,0
+245,68,Medium,3,12.0,10,47.0,Email,Discount,1
+246,34,High,36,14.0,23,107.0,Push,Free shipping,0
+247,57,Low,32,3.0,8,313.0,Email,Loyalty points,0
+248,19,Medium,28,11.0,2,214.0,Push,Free shipping,1
+249,31,High,29,7.0,1,42.0,Push,Free shipping,0
+250,19,Medium,25,15.0,19,73.0,Call,Discount,0
+251,23,High,3,2.0,27,129.0,Email,Free shipping,0
+252,65,Medium,36,19.0,24,32.0,Email,Discount,0
+253,45,Low,29,10.0,4,290.0,Call,Discount,0
+254,28,Low,35,0.0,14,90.0,Call,Free shipping,0
+255,43,Low,40,18.0,2,289.0,SMS,Free shipping,0
+256,20,Low,3,18.0,12,2.0,SMS,Discount,1
+257,24,High,35,3.0,14,,SMS,Loyalty points,0
+258,51,High,23,17.0,6,81.0,Push,Discount,0
+259,51,Low,36,0.0,19,327.0,SMS,Free shipping,0
+260,34,Low,19,17.0,13,7.0,Push,Discount,0
+261,21,Medium,42,7.0,29,110.0,Call,Loyalty points,1
+262,61,Medium,20,17.0,5,200.0,SMS,Loyalty points,0
+263,63,Medium,7,16.0,3,9.0,Push,Discount,0
+264,23,Low,28,15.0,17,217.0,Push,Free shipping,1
+265,54,Medium,13,8.0,24,92.0,SMS,Free shipping,0
+266,56,High,26,18.0,5,227.0,SMS,Loyalty points,0
+267,50,Medium,16,2.0,19,81.0,Push,Loyalty points,0
+268,23,Medium,15,19.0,21,98.0,SMS,Free shipping,1
+269,30,Low,34,5.0,4,22.0,Push,Loyalty points,0
+270,22,High,29,5.0,24,,Call,Loyalty points,0
+271,34,Medium,3,13.0,22,299.0,SMS,Discount,0
+272,31,Low,28,4.0,29,20.0,Email,Free shipping,1
+273,40,Medium,47,11.0,15,49.0,Email,Free shipping,0
+274,54,Low,37,12.0,27,100.0,Email,Discount,0
+275,50,Medium,0,3.0,24,178.0,Email,Loyalty points,0
+276,63,Medium,4,7.0,5,316.0,SMS,Discount,0
+277,26,High,26,19.0,26,59.0,Call,Loyalty points,1
+278,51,Low,48,12.0,12,276.0,Email,Free shipping,0
+279,50,Low,13,14.0,26,218.0,Push,Discount,0
+280,24,Medium,4,13.0,18,346.0,Call,Free shipping,0
+281,34,High,24,8.0,9,240.0,Call,Loyalty points,1
+282,65,Low,6,4.0,27,113.0,SMS,Free shipping,0
+283,60,Medium,12,4.0,0,260.0,SMS,Discount,0
+284,54,High,14,17.0,22,294.0,Call,Free shipping,0
+285,56,High,11,18.0,28,152.0,Push,Free shipping,1
+286,62,High,6,19.0,11,223.0,Call,Discount,0
+287,20,Medium,34,7.0,9,248.0,Push,Free shipping,0
+288,25,Medium,38,9.0,23,228.0,Email,Free shipping,1
+289,18,Low,42,18.0,1,5.0,Email,Loyalty points,0
+290,20,Low,45,8.0,1,87.0,Call,Discount,0
+291,65,Medium,15,1.0,15,39.0,Call,Free shipping,0
+292,25,Medium,41,10.0,20,165.0,Push,Discount,1
+293,21,High,39,2.0,27,125.0,Call,Loyalty points,0
+294,69,Medium,13,5.0,3,159.0,Call,Loyalty points,0
+295,64,Low,49,10.0,26,91.0,SMS,Free shipping,0
+296,66,Low,10,11.0,18,337.0,Call,Discount,1
+297,64,Low,49,13.0,26,181.0,Call,Free shipping,1
+298,54,Medium,42,6.0,27,213.0,Email,Discount,0
+299,26,Low,5,10.0,24,310.0,Call,Discount,0
+300,20,Low,0,4.0,25,23.0,Call,Free shipping,0
+301,59,Low,28,12.0,12,135.0,Email,Loyalty points,0
+302,68,Low,45,6.0,3,145.0,Call,Discount,1
+303,39,Low,15,4.0,17,77.0,Email,Discount,1
+304,25,High,25,14.0,16,20.0,Email,Loyalty points,0
+305,54,Low,36,14.0,24,351.0,Call,Free shipping,0
+306,31,High,4,3.0,18,335.0,SMS,Loyalty points,0
+307,23,Low,18,7.0,27,323.0,Push,Discount,0
+308,37,High,32,12.0,19,215.0,SMS,Discount,0
+309,38,Medium,7,2.0,29,62.0,Call,Loyalty points,0
+310,35,Medium,16,8.0,8,213.0,Email,Discount,1
+311,47,Low,41,6.0,24,50.0,Email,Loyalty points,0
+312,21,Medium,6,18.0,4,290.0,Email,Free shipping,0
+313,18,Low,27,9.0,24,79.0,Call,Discount,0
+314,48,High,4,5.0,14,78.0,Push,Discount,1
+315,46,High,3,5.0,15,326.0,Push,Discount,1
+316,28,High,7,15.0,22,314.0,Email,Loyalty points,0
+317,64,High,6,7.0,15,95.0,Email,Free shipping,0
+318,48,High,37,12.0,18,168.0,Email,Free shipping,0
+319,28,Low,48,3.0,25,50.0,Push,Free shipping,0
+320,39,Low,35,18.0,29,327.0,Push,Free shipping,0
+321,18,Low,28,3.0,24,11.0,Email,Discount,1
+322,23,Low,40,17.0,27,209.0,Push,Discount,1
+323,49,Low,9,19.0,9,108.0,Call,Discount,0
+324,34,Low,2,17.0,25,163.0,SMS,Free shipping,0
+325,50,High,39,6.0,15,304.0,Push,Discount,0
+326,33,High,17,17.0,21,134.0,Push,Loyalty points,0
+327,24,Medium,2,12.0,4,298.0,Call,Loyalty points,0
+328,46,High,28,18.0,2,353.0,SMS,Free shipping,0
+329,37,Low,48,14.0,18,352.0,Call,Free shipping,1
+330,61,Low,38,1.0,21,32.0,Call,Free shipping,0
+331,65,Medium,2,,27,4.0,Call,Discount,0
+332,25,High,4,5.0,15,,Push,Loyalty points,0
+333,53,Low,21,7.0,28,311.0,Email,Free shipping,0
+334,48,High,18,17.0,24,15.0,Push,Free shipping,0
+335,63,Medium,22,16.0,4,312.0,SMS,Discount,0
+336,46,Low,19,2.0,19,305.0,Call,Free shipping,0
+337,43,High,8,6.0,12,166.0,Call,Loyalty points,1
+338,40,High,46,9.0,4,168.0,Push,Discount,0
+339,58,Low,36,8.0,1,150.0,Push,Free shipping,1
+340,36,High,12,15.0,28,170.0,Email,Free shipping,0
+341,32,High,41,10.0,2,156.0,Push,Loyalty points,0
+342,24,High,49,8.0,10,185.0,SMS,Discount,1
+343,62,High,15,1.0,23,30.0,SMS,Free shipping,0
+344,49,Low,30,16.0,23,196.0,SMS,Discount,1
+345,50,Low,15,5.0,3,71.0,SMS,Discount,0
+346,26,Medium,42,10.0,12,84.0,Push,Free shipping,0
+347,57,Low,30,8.0,3,313.0,Call,Free shipping,1
+348,22,Low,14,16.0,7,111.0,SMS,Free shipping,1
+349,38,Low,12,14.0,7,28.0,Call,Discount,0
+350,65,Medium,19,4.0,2,240.0,Call,Free shipping,0
+351,58,Medium,33,13.0,2,111.0,Email,Discount,0
+352,37,Low,37,2.0,28,191.0,Call,Free shipping,1
+353,50,High,43,17.0,0,160.0,Push,Free shipping,0
+354,38,Medium,3,4.0,25,,SMS,Loyalty points,0
+355,43,Low,25,8.0,24,195.0,Call,Discount,1
+356,64,Medium,35,12.0,9,343.0,SMS,Discount,1
+357,48,Medium,24,12.0,6,17.0,Email,Free shipping,0
+358,42,Low,34,1.0,21,125.0,Email,Loyalty points,1
+359,25,Medium,20,16.0,18,51.0,Call,Discount,0
+360,19,Medium,29,10.0,0,5.0,Push,Free shipping,1
+361,46,Medium,32,15.0,20,158.0,Push,Loyalty points,1
+362,54,High,20,0.0,0,17.0,SMS,Discount,0
+363,36,Low,37,10.0,5,97.0,Email,Loyalty points,0
+364,26,Low,22,17.0,2,123.0,Push,Loyalty points,0
+365,44,High,16,6.0,19,202.0,SMS,Free shipping,0
+366,53,High,37,0.0,20,119.0,Push,Discount,0
+367,61,High,27,7.0,8,196.0,Push,Free shipping,0
+368,48,Low,31,13.0,14,44.0,Push,Free shipping,0
+369,21,Medium,27,13.0,3,49.0,Push,Discount,0
+370,39,Medium,30,1.0,6,77.0,Email,Free shipping,1
+371,62,Medium,47,12.0,6,222.0,SMS,Discount,0
+372,32,High,26,0.0,0,172.0,Push,Loyalty points,0
+373,33,Low,43,19.0,1,,Email,Free shipping,1
+374,33,High,32,2.0,17,,Push,Discount,1
+375,45,Low,36,1.0,28,209.0,Call,Loyalty points,1
+376,34,High,8,14.0,21,167.0,Push,Discount,1
+377,35,Medium,17,14.0,17,136.0,Email,Discount,1
+378,20,Low,21,14.0,22,12.0,SMS,Loyalty points,1
+379,55,Low,11,12.0,19,95.0,Email,Discount,0
+380,25,Low,14,8.0,24,162.0,SMS,Loyalty points,0
+381,41,Low,4,5.0,6,29.0,SMS,Free shipping,0
+382,19,Medium,7,,10,270.0,Email,Free shipping,0
+383,62,Medium,41,7.0,6,113.0,Push,Free shipping,0
+384,60,High,7,10.0,22,73.0,SMS,Discount,0
+385,62,High,34,3.0,23,331.0,Call,Discount,1
+386,36,Medium,7,9.0,19,170.0,Call,Loyalty points,0
+387,68,Low,23,5.0,11,352.0,Email,Discount,1
+388,45,Medium,12,6.0,26,74.0,SMS,Loyalty points,1
+389,40,High,22,,18,119.0,Push,Free shipping,0
+390,40,High,20,6.0,13,133.0,Email,Free shipping,0
+391,21,Medium,34,6.0,26,262.0,SMS,Free shipping,0
+392,54,Medium,34,2.0,8,38.0,Push,Discount,1
+393,53,High,35,1.0,2,175.0,SMS,Free shipping,0
+394,29,Low,46,1.0,26,37.0,Push,Free shipping,1
+395,27,Medium,10,,15,63.0,Push,Loyalty points,0
+396,49,Medium,29,4.0,18,216.0,SMS,Free shipping,1
+397,52,Medium,1,15.0,29,312.0,Email,Loyalty points,0
+398,55,High,2,4.0,3,28.0,Call,Free shipping,0
+399,60,Medium,38,2.0,0,205.0,Call,Free shipping,0
+400,35,High,5,13.0,13,14.0,SMS,Free shipping,1
+401,54,High,44,15.0,25,355.0,Call,Discount,1
+402,63,High,4,3.0,24,119.0,SMS,Loyalty points,0
+403,19,High,30,9.0,13,293.0,Call,Discount,0
+404,32,Low,18,15.0,20,16.0,SMS,Discount,0
+405,28,Medium,16,16.0,7,87.0,Push,Loyalty points,0
+406,33,Low,40,12.0,12,291.0,Email,Discount,1
+407,50,High,28,0.0,11,70.0,Call,Loyalty points,0
+408,52,High,33,6.0,12,61.0,Push,Discount,0
+409,31,Medium,24,5.0,22,,Push,Discount,0
+410,47,Medium,3,10.0,20,364.0,Push,Free shipping,0
+411,37,Low,31,,26,285.0,SMS,Free shipping,0
+412,31,Low,31,14.0,22,80.0,SMS,Discount,0
+413,35,High,41,4.0,2,205.0,Push,Free shipping,1
+414,52,Medium,28,12.0,0,340.0,Call,Loyalty points,0
+415,39,High,20,16.0,21,360.0,Email,Free shipping,0
+416,67,Medium,33,6.0,22,90.0,SMS,Free shipping,1
+417,64,Low,10,5.0,12,215.0,Push,Loyalty points,0
+418,52,High,8,5.0,9,70.0,SMS,Discount,0
+419,32,Medium,18,10.0,19,190.0,SMS,Free shipping,1
+420,64,High,2,7.0,7,153.0,Push,Loyalty points,0
+421,46,High,47,3.0,24,287.0,Push,Loyalty points,0
+422,47,Medium,35,19.0,10,139.0,SMS,Free shipping,1
+423,38,High,18,13.0,2,191.0,Call,Loyalty points,1
+424,53,Medium,28,13.0,24,114.0,Call,Discount,1
+425,28,Medium,37,12.0,24,,Call,Loyalty points,0
+426,38,Low,43,16.0,12,78.0,Email,Loyalty points,0
+427,57,High,23,18.0,4,274.0,Email,Discount,1
+428,46,Low,34,4.0,11,250.0,Email,Discount,0
+429,22,Medium,37,11.0,23,68.0,Push,Discount,0
+430,37,Medium,34,0.0,25,262.0,Push,Free shipping,1
+431,64,Low,12,16.0,0,253.0,Push,Discount,0
+432,28,Medium,34,12.0,6,83.0,Email,Discount,0
+433,39,High,26,8.0,8,264.0,SMS,Free shipping,1
+434,42,High,10,11.0,16,359.0,SMS,Discount,0
+435,65,High,24,16.0,1,215.0,Email,Discount,1
+436,22,Medium,25,10.0,6,57.0,Email,Loyalty points,0
+437,48,High,14,12.0,14,291.0,Call,Discount,0
+438,62,Low,13,11.0,26,60.0,SMS,Discount,0
+439,43,Low,30,0.0,22,286.0,SMS,Loyalty points,0
+440,36,Low,24,11.0,13,272.0,SMS,Discount,0
+441,31,Medium,31,13.0,8,93.0,Call,Free shipping,0
+442,62,Low,11,2.0,25,,Email,Free shipping,0
+443,42,Medium,8,12.0,20,109.0,Push,Discount,0
+444,21,Medium,2,17.0,21,58.0,Push,Discount,0
+445,60,Low,11,10.0,28,300.0,SMS,Loyalty points,0
+446,23,Low,20,9.0,23,23.0,Email,Loyalty points,0
+447,18,Low,29,11.0,20,346.0,SMS,Discount,0
+448,33,High,33,17.0,4,40.0,Email,Discount,1
+449,41,High,1,15.0,3,48.0,Email,Discount,0
+450,57,Medium,6,6.0,19,297.0,Push,Discount,0
+451,55,High,37,4.0,14,92.0,Push,Free shipping,0
+452,28,High,34,8.0,14,49.0,Push,Discount,1
+453,37,High,14,,1,277.0,Email,Discount,0
+454,23,High,17,5.0,17,111.0,Call,Free shipping,0
+455,41,Low,2,7.0,27,,Call,Discount,1
+456,44,High,36,17.0,12,44.0,Email,Loyalty points,0
+457,22,Low,0,1.0,28,46.0,Email,Discount,0
+458,65,Medium,30,8.0,19,186.0,SMS,Loyalty points,1
+459,58,Low,1,3.0,15,49.0,Call,Loyalty points,0
+460,54,Low,49,2.0,2,68.0,Call,Discount,0
+461,65,Low,43,14.0,4,129.0,Push,Discount,0
+462,38,Medium,48,14.0,5,102.0,Email,Loyalty points,1
+463,25,Low,7,3.0,28,231.0,Email,Discount,0
+464,35,Low,9,1.0,13,101.0,Push,Discount,0
+465,35,Low,19,3.0,10,56.0,Push,Free shipping,0
+466,42,Low,13,9.0,9,337.0,Call,Free shipping,0
+467,53,Low,43,9.0,2,55.0,Push,Discount,1
+468,42,Medium,28,7.0,14,340.0,Push,Loyalty points,1
+469,23,High,17,6.0,14,119.0,Email,Discount,0
+470,47,Low,39,1.0,1,46.0,Push,Discount,0
+471,31,High,12,1.0,20,125.0,Call,Discount,1
+472,40,Medium,45,13.0,5,83.0,SMS,Loyalty points,1
+473,34,Medium,37,1.0,10,42.0,SMS,Loyalty points,1
+474,66,Low,38,19.0,24,55.0,Email,Free shipping,0
+475,29,Low,28,6.0,6,176.0,SMS,Free shipping,0
+476,25,High,11,6.0,3,160.0,Email,Loyalty points,0
+477,33,High,18,0.0,22,296.0,SMS,Free shipping,0
+478,21,High,15,2.0,4,220.0,Push,Loyalty points,0
+479,18,Medium,49,18.0,3,277.0,SMS,Loyalty points,0
+480,61,High,48,13.0,16,134.0,Email,Free shipping,0
+481,58,Low,0,8.0,8,11.0,Call,Discount,0
+482,58,Low,6,0.0,16,195.0,SMS,Discount,0
+483,33,Medium,30,10.0,7,164.0,Call,Loyalty points,0
+484,51,Low,31,2.0,23,332.0,Push,Free shipping,0
+485,62,High,40,3.0,19,206.0,Push,Discount,1
+486,21,Medium,15,16.0,17,52.0,Email,Discount,0
+487,61,High,17,3.0,25,54.0,Push,Free shipping,0
+488,21,High,48,12.0,3,357.0,Call,Loyalty points,0
+489,66,Low,38,5.0,19,345.0,Call,Free shipping,1
+490,36,Low,39,16.0,26,142.0,Push,Loyalty points,0
+491,37,Medium,12,18.0,13,277.0,Email,Free shipping,0
+492,59,Medium,11,2.0,1,230.0,SMS,Loyalty points,0
+493,46,Medium,39,18.0,11,46.0,Call,Discount,0
+494,35,Medium,3,16.0,3,149.0,Call,Discount,1
+495,34,High,36,5.0,11,21.0,Email,Loyalty points,0
+496,44,Low,16,7.0,23,56.0,Email,Loyalty points,0
+497,55,High,24,9.0,27,320.0,Push,Discount,0
+498,40,Medium,46,17.0,27,52.0,SMS,Loyalty points,1
+499,25,High,32,14.0,5,92.0,Call,Loyalty points,1
+500,20,Low,10,10.0,4,329.0,Push,Free shipping,0
+501,60,High,37,1.0,14,197.0,Email,Free shipping,0
+502,44,Medium,30,,20,26.0,Email,Free shipping,1
+503,38,Medium,48,16.0,1,74.0,SMS,Discount,0
+504,66,High,6,6.0,20,283.0,Call,Free shipping,0
+505,43,Medium,24,13.0,16,13.0,Call,Free shipping,0
+506,54,Low,24,19.0,3,195.0,Call,Discount,1
+507,55,Low,6,14.0,22,261.0,SMS,Loyalty points,0
+508,61,High,41,18.0,19,301.0,SMS,Loyalty points,0
+509,41,High,8,7.0,4,200.0,SMS,Discount,0
+510,68,Medium,34,0.0,25,220.0,Call,Free shipping,1
+511,43,High,38,4.0,25,167.0,Push,Free shipping,1
+512,36,Low,9,3.0,6,1.0,Email,Discount,0
+513,33,High,1,11.0,8,305.0,Call,Free shipping,0
+514,23,High,27,11.0,12,138.0,Call,Discount,0
+515,62,Medium,30,5.0,7,234.0,SMS,Free shipping,0
+516,63,Low,11,12.0,12,295.0,Push,Discount,0
+517,69,Medium,42,1.0,27,216.0,Call,Loyalty points,0
+518,51,Medium,48,6.0,4,360.0,Email,Loyalty points,0
+519,30,High,45,17.0,15,314.0,Push,Discount,0
+520,57,Low,48,4.0,1,51.0,Push,Loyalty points,0
+521,30,Low,39,15.0,25,206.0,SMS,Loyalty points,0
+522,61,High,17,6.0,1,,Push,Free shipping,0
+523,52,Medium,37,17.0,16,151.0,Call,Discount,1
+524,46,Low,2,17.0,13,50.0,SMS,Free shipping,0
+525,57,High,27,13.0,12,204.0,Email,Free shipping,1
+526,21,High,27,0.0,28,138.0,Email,Loyalty points,0
+527,51,High,18,16.0,23,158.0,Email,Loyalty points,1
+528,56,Medium,31,1.0,29,172.0,Call,Discount,0
+529,20,Low,3,10.0,23,122.0,SMS,Discount,0
+530,60,High,21,5.0,1,179.0,SMS,Free shipping,0
+531,45,Low,26,4.0,0,66.0,Email,Loyalty points,1
+532,20,Low,32,9.0,7,177.0,Push,Loyalty points,0
+533,58,Low,44,1.0,22,250.0,Push,Discount,1
+534,42,Low,20,11.0,20,153.0,SMS,Free shipping,0
+535,54,Low,2,9.0,17,152.0,Email,Loyalty points,0
+536,19,Medium,26,17.0,11,343.0,Push,Free shipping,0
+537,22,High,44,3.0,15,252.0,Push,Free shipping,1
+538,67,Low,47,10.0,9,215.0,Email,Free shipping,1
+539,58,High,49,11.0,15,247.0,Push,Discount,1
+540,20,Medium,31,,21,320.0,Call,Free shipping,0
+541,19,Medium,3,6.0,2,14.0,Push,Free shipping,0
+542,42,Low,33,16.0,3,170.0,Call,Loyalty points,1
+543,44,Low,4,11.0,15,283.0,SMS,Loyalty points,0
+544,68,Low,49,2.0,20,220.0,Email,Free shipping,1
+545,18,Medium,6,9.0,21,234.0,Email,Discount,1
+546,48,High,24,10.0,0,256.0,Email,Free shipping,1
+547,55,Low,39,18.0,17,341.0,Call,Free shipping,0
+548,34,Medium,29,12.0,6,132.0,Email,Discount,1
+549,25,Medium,43,7.0,11,,Push,Loyalty points,0
+550,63,Low,32,4.0,6,348.0,Push,Loyalty points,0
+551,67,Low,36,16.0,9,162.0,SMS,Free shipping,0
+552,38,Medium,10,16.0,5,106.0,Push,Free shipping,0
+553,56,Low,7,6.0,3,42.0,SMS,Loyalty points,0
+554,35,High,11,7.0,0,316.0,SMS,Loyalty points,1
+555,43,Low,45,5.0,24,10.0,SMS,Loyalty points,0
+556,31,Low,15,5.0,10,185.0,SMS,Discount,0
+557,63,Medium,0,9.0,27,109.0,SMS,Discount,0
+558,59,High,41,6.0,3,158.0,Email,Free shipping,0
+559,40,Medium,36,17.0,2,328.0,Email,Loyalty points,0
+560,44,Low,35,16.0,1,59.0,Call,Free shipping,0
+561,40,High,30,12.0,6,14.0,Push,Free shipping,0
+562,35,Medium,24,9.0,23,286.0,SMS,Free shipping,0
+563,53,Low,2,4.0,16,165.0,Email,Discount,0
+564,18,Low,36,18.0,25,90.0,Email,Free shipping,0
+565,67,Medium,31,16.0,11,275.0,Push,Loyalty points,0
+566,52,Low,28,15.0,4,196.0,Push,Discount,0
+567,54,High,17,16.0,22,5.0,Push,Loyalty points,1
+568,24,Medium,35,14.0,18,,Call,Free shipping,1
+569,61,Medium,24,6.0,19,180.0,Call,Loyalty points,0
+570,68,Low,11,6.0,0,246.0,Push,Free shipping,0
+571,46,High,25,15.0,2,181.0,Email,Free shipping,0
+572,32,Low,6,2.0,15,353.0,Email,Free shipping,0
+573,69,Low,32,12.0,13,357.0,Email,Free shipping,0
+574,20,Low,21,2.0,24,45.0,Email,Loyalty points,0
+575,46,Medium,25,,1,343.0,Call,Discount,0
+576,68,Medium,46,3.0,0,34.0,SMS,Free shipping,0
+577,52,Low,3,4.0,25,78.0,Email,Discount,0
+578,55,Low,20,16.0,6,105.0,Push,Free shipping,0
+579,54,Medium,31,14.0,21,61.0,SMS,Free shipping,1
+580,66,High,35,5.0,19,165.0,SMS,Loyalty points,0
+581,18,Low,9,14.0,10,237.0,SMS,Discount,0
+582,49,Low,15,3.0,25,254.0,Email,Free shipping,0
+583,46,Low,47,14.0,11,137.0,Call,Loyalty points,0
+584,21,Medium,2,3.0,3,277.0,SMS,Loyalty points,0
+585,63,Low,8,3.0,15,261.0,Call,Discount,0
+586,57,High,7,1.0,16,178.0,SMS,Loyalty points,0
+587,35,Low,19,19.0,0,214.0,Email,Free shipping,0
+588,37,High,14,15.0,11,,Call,Loyalty points,0
+589,55,Medium,15,14.0,16,236.0,SMS,Discount,0
+590,21,High,36,10.0,15,334.0,Push,Free shipping,0
+591,46,Medium,28,1.0,3,354.0,SMS,Free shipping,0
+592,32,Medium,46,9.0,17,113.0,SMS,Loyalty points,1
+593,33,Medium,25,1.0,25,18.0,Call,Free shipping,0
+594,38,High,36,3.0,21,58.0,Push,Loyalty points,0
+595,48,High,35,11.0,26,198.0,Push,Free shipping,0
+596,50,Medium,45,0.0,29,65.0,Email,Free shipping,1
+597,58,Medium,17,15.0,23,256.0,Email,Discount,1
+598,69,High,39,1.0,15,274.0,Push,Free shipping,0
+599,61,High,22,7.0,21,319.0,Push,Discount,0
+600,36,Medium,4,6.0,1,84.0,SMS,Free shipping,0
+601,35,High,37,4.0,9,47.0,Call,Loyalty points,0
+602,22,Medium,29,4.0,13,344.0,Call,Discount,1
+603,34,High,8,14.0,5,57.0,Email,Loyalty points,0
+604,57,Medium,21,10.0,15,72.0,Call,Loyalty points,0
+605,32,Low,43,7.0,6,40.0,SMS,Free shipping,0
+606,28,High,26,,7,308.0,Email,Loyalty points,0
+607,33,High,29,13.0,28,311.0,Push,Free shipping,0
+608,62,Medium,32,5.0,0,216.0,Push,Loyalty points,0
+609,62,Medium,8,19.0,0,85.0,SMS,Loyalty points,0
+610,52,Medium,6,12.0,11,187.0,SMS,Discount,0
+611,69,Medium,28,1.0,27,48.0,Email,Free shipping,0
+612,62,High,25,3.0,1,227.0,Email,Free shipping,0
+613,31,Medium,20,2.0,12,349.0,Email,Free shipping,0
+614,27,Medium,11,11.0,12,328.0,Call,Discount,0
+615,18,Low,33,19.0,17,35.0,SMS,Loyalty points,1
+616,55,Medium,36,19.0,25,167.0,SMS,Discount,0
+617,47,High,20,5.0,19,269.0,Call,Free shipping,0
+618,32,Low,44,4.0,2,150.0,Call,Loyalty points,1
+619,31,High,0,3.0,0,353.0,SMS,Free shipping,0
+620,65,Low,24,10.0,8,,Push,Free shipping,0
+621,65,High,15,17.0,23,92.0,SMS,Free shipping,0
+622,63,Low,17,15.0,7,69.0,SMS,Loyalty points,1
+623,34,High,46,17.0,29,159.0,Email,Discount,0
+624,29,Low,39,19.0,18,134.0,Email,Free shipping,0
+625,58,High,8,15.0,3,115.0,Call,Discount,0
+626,28,Medium,48,0.0,4,304.0,SMS,Discount,1
+627,62,High,49,4.0,25,215.0,SMS,Free shipping,1
+628,69,High,4,7.0,16,289.0,Push,Loyalty points,0
+629,60,Low,48,13.0,11,193.0,SMS,Discount,0
+630,40,Medium,21,16.0,12,319.0,Email,Discount,0
+631,26,High,47,10.0,27,97.0,Push,Loyalty points,0
+632,63,Low,36,10.0,13,220.0,Push,Loyalty points,0
+633,58,Low,11,12.0,16,21.0,Push,Free shipping,0
+634,48,Medium,31,0.0,21,168.0,SMS,Free shipping,0
+635,69,High,1,15.0,19,95.0,SMS,Loyalty points,0
+636,28,Medium,4,2.0,18,332.0,SMS,Free shipping,0
+637,61,Low,25,0.0,6,292.0,SMS,Free shipping,0
+638,61,Medium,43,7.0,13,141.0,Email,Loyalty points,0
+639,59,Medium,40,0.0,27,273.0,Push,Discount,0
+640,27,Low,15,8.0,10,69.0,Call,Free shipping,0
+641,24,Medium,29,,24,242.0,Push,Loyalty points,0
+642,51,High,23,4.0,6,333.0,Email,Discount,0
+643,23,High,48,13.0,14,129.0,Email,Discount,0
+644,65,Low,15,,12,128.0,Email,Free shipping,1
+645,49,Medium,39,,4,281.0,Email,Free shipping,1
+646,69,Low,22,6.0,13,101.0,Call,Free shipping,1
+647,45,Low,19,10.0,2,227.0,Email,Free shipping,0
+648,58,Medium,9,12.0,14,185.0,Call,Free shipping,1
+649,43,High,25,7.0,0,283.0,Push,Free shipping,0
+650,26,High,46,14.0,21,361.0,Call,Loyalty points,1
+651,51,Low,30,6.0,21,330.0,Call,Free shipping,1
+652,32,High,44,13.0,7,,Email,Loyalty points,1
+653,28,High,43,19.0,19,278.0,Call,Loyalty points,0
+654,20,Low,44,10.0,13,267.0,SMS,Discount,0
+655,45,Medium,23,7.0,1,308.0,Call,Discount,0
+656,35,High,28,11.0,25,185.0,Push,Loyalty points,1
+657,32,Medium,24,8.0,6,209.0,SMS,Free shipping,0
+658,29,Low,24,14.0,14,263.0,Email,Free shipping,0
+659,65,Low,47,6.0,12,,Push,Discount,1
+660,31,High,42,13.0,29,33.0,SMS,Loyalty points,0
+661,18,High,19,4.0,18,168.0,Email,Discount,0
+662,61,Medium,42,10.0,7,47.0,Email,Discount,0
+663,65,Medium,34,9.0,24,114.0,SMS,Loyalty points,0
+664,63,High,9,9.0,0,98.0,Push,Discount,0
+665,35,Medium,33,9.0,27,320.0,SMS,Free shipping,1
+666,56,Medium,40,11.0,23,332.0,Push,Discount,1
+667,26,Medium,31,4.0,14,241.0,Call,Free shipping,0
+668,33,Low,15,0.0,7,88.0,Call,Free shipping,0
+669,61,Low,45,19.0,19,83.0,Email,Loyalty points,1
+670,67,Medium,23,3.0,13,288.0,Push,Discount,0
+671,42,Medium,1,15.0,5,51.0,Call,Free shipping,0
+672,31,Low,9,5.0,2,152.0,Push,Free shipping,0
+673,62,Low,36,6.0,5,124.0,Push,Loyalty points,1
+674,41,Low,1,11.0,0,52.0,SMS,Loyalty points,0
+675,26,Medium,32,11.0,27,92.0,Call,Loyalty points,0
+676,67,High,27,1.0,16,261.0,Email,Loyalty points,1
+677,51,Low,12,3.0,29,20.0,SMS,Loyalty points,1
+678,55,Low,29,6.0,22,266.0,Email,Discount,0
+679,31,Low,46,15.0,14,89.0,Email,Discount,1
+680,63,Medium,24,13.0,20,347.0,Call,Loyalty points,0
+681,36,Medium,15,9.0,19,357.0,Call,Discount,0
+682,68,Medium,8,6.0,17,347.0,Call,Loyalty points,1
+683,43,Low,37,13.0,1,51.0,Email,Free shipping,0
+684,22,Medium,33,17.0,4,4.0,Call,Discount,0
+685,30,Medium,31,8.0,9,27.0,Push,Free shipping,1
+686,33,Medium,49,16.0,7,62.0,Call,Discount,0
+687,36,Medium,7,1.0,28,282.0,SMS,Free shipping,0
+688,61,Medium,38,3.0,18,338.0,SMS,Discount,1
+689,44,High,44,6.0,0,73.0,Email,Loyalty points,0
+690,66,Low,43,12.0,29,272.0,Push,Discount,0
+691,43,Medium,20,1.0,1,136.0,Email,Loyalty points,1
+692,53,High,43,15.0,20,,Call,Discount,1
+693,30,Low,36,7.0,14,79.0,Email,Loyalty points,0
+694,69,Medium,7,7.0,22,312.0,Email,Loyalty points,0
+695,64,Low,5,11.0,10,140.0,Call,Discount,0
+696,43,Low,21,14.0,25,268.0,Email,Free shipping,0
+697,53,High,36,11.0,2,145.0,Push,Loyalty points,1
+698,59,Low,41,15.0,23,248.0,Push,Free shipping,1
+699,44,Medium,5,10.0,18,317.0,Email,Loyalty points,0
+700,67,High,12,15.0,26,325.0,Email,Discount,1
+701,62,Medium,1,12.0,24,187.0,SMS,Free shipping,0
+702,30,Medium,7,17.0,15,68.0,Push,Discount,0
+703,68,Medium,24,12.0,24,160.0,Push,Discount,0
+704,57,Medium,7,6.0,5,92.0,SMS,Free shipping,1
+705,69,Low,48,17.0,25,267.0,Email,Loyalty points,1
+706,40,Medium,33,11.0,13,268.0,Email,Loyalty points,0
+707,52,High,42,12.0,4,269.0,SMS,Discount,0
+708,47,Low,41,5.0,12,328.0,SMS,Free shipping,0
+709,43,Low,11,0.0,29,256.0,Push,Loyalty points,0
+710,22,Low,32,5.0,27,211.0,Email,Discount,0
+711,34,Low,20,19.0,24,223.0,SMS,Loyalty points,0
+712,37,Medium,10,19.0,19,296.0,Push,Discount,1
+713,38,High,7,6.0,16,186.0,SMS,Free shipping,1
+714,25,Low,5,5.0,8,220.0,SMS,Free shipping,0
+715,35,High,9,15.0,10,,Push,Discount,0
+716,60,Medium,36,12.0,3,91.0,SMS,Free shipping,0
+717,20,High,14,,19,210.0,Push,Free shipping,0
+718,32,Low,21,5.0,0,179.0,Call,Discount,0
+719,38,High,29,19.0,2,142.0,Call,Free shipping,1
+720,68,Medium,49,11.0,27,226.0,SMS,Discount,0
+721,69,Low,21,3.0,9,137.0,SMS,Free shipping,1
+722,64,Medium,26,8.0,15,244.0,Push,Loyalty points,1
+723,69,Medium,34,17.0,8,105.0,Call,Discount,1
+724,27,High,32,0.0,4,236.0,Call,Loyalty points,0
+725,35,Low,26,1.0,3,72.0,Push,Free shipping,0
+726,23,Low,30,4.0,24,165.0,Call,Loyalty points,0
+727,19,High,49,3.0,2,14.0,SMS,Discount,0
+728,26,Low,18,0.0,26,264.0,Call,Loyalty points,0
+729,49,High,30,14.0,29,312.0,Call,Discount,0
+730,21,Medium,47,19.0,29,314.0,Email,Loyalty points,1
+731,43,High,48,18.0,13,245.0,SMS,Discount,0
+732,62,Low,19,17.0,15,42.0,Call,Loyalty points,0
+733,52,High,25,13.0,8,19.0,SMS,Discount,0
+734,37,Medium,35,14.0,23,343.0,SMS,Discount,0
+735,26,High,9,18.0,26,7.0,Email,Free shipping,1
+736,50,Low,2,16.0,17,290.0,Push,Free shipping,0
+737,31,Medium,24,15.0,18,289.0,Push,Free shipping,1
+738,52,Low,17,6.0,10,129.0,Call,Discount,0
+739,27,Low,21,13.0,9,343.0,Email,Free shipping,1
+740,29,High,38,5.0,23,151.0,Call,Discount,1
+741,63,Low,43,0.0,15,221.0,Call,Discount,1
+742,28,Low,22,2.0,14,49.0,Call,Discount,0
+743,69,High,37,9.0,7,53.0,Push,Loyalty points,0
+744,66,High,43,17.0,25,116.0,Call,Free shipping,0
+745,69,Low,34,,29,318.0,Push,Discount,0
+746,58,Low,7,19.0,16,213.0,Push,Free shipping,0
+747,68,Low,15,18.0,24,152.0,SMS,Free shipping,1
+748,37,Low,24,6.0,9,259.0,Call,Discount,0
+749,29,Medium,17,18.0,0,276.0,Call,Discount,0
+750,53,Low,25,12.0,15,207.0,Call,Loyalty points,0
+751,47,Low,29,19.0,29,364.0,Call,Free shipping,0
+752,36,High,7,3.0,16,31.0,SMS,Loyalty points,1
+753,43,High,5,5.0,6,76.0,SMS,Free shipping,0
+754,46,Medium,11,14.0,25,91.0,SMS,Discount,1
+755,28,Low,6,6.0,27,98.0,Email,Loyalty points,0
+756,32,Low,16,19.0,7,112.0,Call,Loyalty points,0
+757,58,High,38,15.0,20,200.0,Call,Discount,0
+758,48,Low,28,10.0,10,6.0,Email,Discount,1
+759,31,High,7,14.0,14,7.0,Email,Free shipping,1
+760,36,Medium,22,12.0,5,24.0,Email,Loyalty points,0
+761,68,High,33,9.0,9,2.0,Email,Loyalty points,0
+762,65,Medium,36,14.0,21,,Call,Loyalty points,0
+763,43,Low,1,13.0,7,27.0,SMS,Free shipping,0
+764,42,Low,22,11.0,25,258.0,Email,Loyalty points,0
+765,58,Medium,36,10.0,3,344.0,Email,Free shipping,0
+766,45,High,14,3.0,28,136.0,Call,Free shipping,1
+767,22,Medium,32,12.0,8,28.0,Email,Loyalty points,1
+768,41,Medium,35,17.0,17,362.0,Email,Loyalty points,0
+769,49,Low,46,8.0,26,,Call,Loyalty points,1
+770,58,Low,40,11.0,24,149.0,SMS,Free shipping,0
+771,43,High,41,,27,267.0,Push,Discount,0
+772,37,Low,39,18.0,12,259.0,Call,Free shipping,0
+773,26,Low,29,9.0,10,227.0,Email,Free shipping,0
+774,24,Medium,7,13.0,24,268.0,Call,Loyalty points,0
+775,21,Low,31,0.0,15,81.0,Call,Free shipping,0
+776,24,Medium,0,18.0,19,197.0,Call,Free shipping,0
+777,45,Medium,30,13.0,18,168.0,Call,Free shipping,1
+778,37,Medium,0,5.0,20,176.0,Push,Discount,0
+779,60,High,39,13.0,7,152.0,SMS,Discount,0
+780,48,High,6,3.0,3,222.0,Call,Discount,0
+781,19,Medium,25,12.0,20,332.0,Email,Discount,0
+782,27,Low,46,6.0,28,220.0,Email,Free shipping,0
+783,54,Low,44,16.0,26,221.0,Email,Loyalty points,1
+784,20,Medium,18,8.0,10,135.0,SMS,Discount,1
+785,53,Low,2,13.0,22,55.0,Call,Discount,1
+786,46,Medium,46,11.0,24,353.0,Email,Discount,0
+787,41,Low,6,16.0,0,241.0,Push,Discount,0
+788,58,Medium,13,13.0,7,319.0,Call,Loyalty points,0
+789,37,Low,43,17.0,19,329.0,SMS,Free shipping,1
+790,58,Medium,33,19.0,11,301.0,SMS,Loyalty points,1
+791,19,Low,22,7.0,24,340.0,Call,Loyalty points,0
+792,68,Medium,33,3.0,15,197.0,Email,Discount,0
+793,39,High,9,10.0,19,106.0,Email,Loyalty points,0
+794,60,High,23,15.0,15,122.0,SMS,Free shipping,1
+795,56,Medium,16,12.0,8,112.0,Push,Discount,0
+796,39,Low,49,12.0,10,336.0,Push,Loyalty points,1
+797,29,Low,49,1.0,8,74.0,Email,Free shipping,0
+798,69,High,36,,17,155.0,Call,Loyalty points,0
+799,18,Medium,17,14.0,22,360.0,Push,Loyalty points,0
+800,32,Low,15,,10,295.0,Email,Free shipping,1
+801,67,Low,48,0.0,16,49.0,Push,Free shipping,0
+802,67,Medium,30,,6,192.0,Push,Free shipping,1
+803,54,Low,27,9.0,24,251.0,SMS,Loyalty points,1
+804,63,High,22,6.0,15,246.0,Push,Discount,0
+805,44,High,23,11.0,12,358.0,Push,Loyalty points,1
+806,50,Low,6,14.0,12,,Email,Loyalty points,0
+807,26,Low,8,3.0,11,,Call,Discount,0
+808,41,Low,19,12.0,4,88.0,Email,Loyalty points,1
+809,48,High,2,16.0,26,34.0,SMS,Free shipping,1
+810,39,Medium,6,4.0,2,24.0,Push,Free shipping,0
+811,48,High,49,10.0,16,1.0,SMS,Discount,0
+812,59,Medium,8,2.0,27,129.0,Push,Free shipping,1
+813,40,High,29,4.0,8,122.0,Push,Free shipping,0
+814,22,Low,26,6.0,0,,Call,Discount,0
+815,43,Medium,38,3.0,17,,SMS,Discount,0
+816,30,Medium,48,16.0,3,130.0,Push,Free shipping,1
+817,51,Medium,42,2.0,20,329.0,SMS,Loyalty points,0
+818,49,High,36,6.0,23,64.0,Email,Free shipping,1
+819,38,Medium,48,1.0,4,63.0,Email,Loyalty points,0
+820,68,High,40,12.0,8,51.0,Email,Loyalty points,0
+821,58,High,16,19.0,29,139.0,SMS,Discount,0
+822,32,Medium,32,16.0,19,147.0,Email,Free shipping,0
+823,35,Medium,40,19.0,23,156.0,Email,Loyalty points,1
+824,43,High,13,18.0,27,302.0,Email,Loyalty points,1
+825,55,Low,5,0.0,1,328.0,Push,Discount,0
+826,69,High,9,17.0,15,79.0,SMS,Free shipping,0
+827,40,High,31,9.0,1,352.0,Push,Loyalty points,0
+828,47,High,25,5.0,19,36.0,Email,Free shipping,0
+829,63,High,39,2.0,13,32.0,Push,Free shipping,0
+830,29,High,39,10.0,23,275.0,Push,Free shipping,0
+831,23,Low,19,18.0,12,86.0,Push,Free shipping,0
+832,53,Medium,43,6.0,22,266.0,SMS,Discount,0
+833,18,Low,12,7.0,26,113.0,Push,Discount,1
+834,22,Low,28,12.0,12,264.0,Push,Discount,0
+835,50,Medium,33,5.0,11,15.0,Email,Discount,0
+836,53,High,35,12.0,1,307.0,SMS,Loyalty points,0
+837,59,Medium,2,9.0,24,251.0,Push,Free shipping,1
+838,66,Low,39,15.0,23,2.0,Call,Free shipping,1
+839,30,Medium,35,2.0,13,74.0,Email,Discount,0
+840,36,High,26,14.0,28,251.0,SMS,Free shipping,0
+841,30,Medium,39,9.0,24,175.0,SMS,Discount,0
+842,19,Medium,34,18.0,4,111.0,Call,Loyalty points,0
+843,62,High,32,4.0,13,40.0,Push,Free shipping,0
+844,61,Low,21,2.0,6,297.0,SMS,Discount,1
+845,66,High,6,15.0,18,48.0,Call,Discount,0
+846,49,Medium,44,8.0,16,164.0,SMS,Discount,1
+847,51,Medium,14,4.0,3,39.0,SMS,Free shipping,0
+848,52,Medium,23,3.0,15,361.0,Push,Discount,0
+849,39,High,9,13.0,6,336.0,Push,Free shipping,0
+850,21,Low,16,18.0,2,293.0,Email,Loyalty points,0
+851,29,High,25,19.0,10,127.0,Push,Free shipping,0
+852,26,High,8,10.0,28,136.0,Email,Discount,0
+853,45,Medium,43,8.0,22,23.0,Call,Free shipping,1
+854,44,Medium,19,12.0,16,131.0,Email,Loyalty points,1
+855,21,Medium,32,2.0,11,277.0,Push,Loyalty points,0
+856,32,Medium,43,16.0,21,175.0,SMS,Loyalty points,1
+857,22,High,31,10.0,19,8.0,SMS,Free shipping,1
+858,20,High,40,5.0,20,237.0,SMS,Free shipping,1
+859,33,Low,35,1.0,12,352.0,SMS,Discount,0
+860,34,High,40,6.0,25,281.0,SMS,Free shipping,0
+861,64,Low,48,4.0,3,330.0,Call,Free shipping,0
+862,37,Medium,42,3.0,13,150.0,Call,Discount,0
+863,34,Low,4,14.0,26,210.0,Call,Free shipping,1
+864,28,Low,32,17.0,24,51.0,Email,Discount,1
+865,62,High,44,,23,125.0,Call,Free shipping,1
+866,35,Medium,4,2.0,24,335.0,Push,Discount,0
+867,24,Medium,26,9.0,27,,Push,Discount,0
+868,30,Medium,12,14.0,26,228.0,Call,Free shipping,1
+869,57,High,24,14.0,2,314.0,Email,Free shipping,0
+870,19,Low,6,0.0,21,243.0,Email,Free shipping,1
+871,65,Medium,36,11.0,13,56.0,Call,Discount,1
+872,19,High,9,3.0,17,199.0,Push,Free shipping,0
+873,58,Medium,8,18.0,27,176.0,Call,Free shipping,0
+874,49,High,20,4.0,1,229.0,Push,Discount,0
+875,44,Medium,37,17.0,4,114.0,Push,Discount,0
+876,38,High,37,14.0,16,117.0,Push,Free shipping,1
+877,55,High,43,15.0,12,1.0,Email,Free shipping,0
+878,47,Low,13,10.0,5,221.0,Call,Discount,0
+879,28,Medium,46,2.0,24,11.0,Call,Loyalty points,0
+880,36,Medium,33,6.0,5,6.0,Call,Free shipping,0
+881,27,Medium,16,3.0,20,81.0,Call,Loyalty points,0
+882,29,High,22,7.0,8,240.0,Push,Free shipping,0
+883,21,Medium,17,17.0,24,,Call,Free shipping,1
+884,33,High,3,4.0,12,128.0,Email,Discount,1
+885,22,Medium,34,2.0,28,186.0,SMS,Loyalty points,0
+886,22,Medium,27,9.0,12,75.0,Call,Discount,0
+887,63,High,47,6.0,13,313.0,Push,Loyalty points,0
+888,49,Medium,40,19.0,16,311.0,SMS,Free shipping,1
+889,20,Low,4,14.0,22,103.0,SMS,Free shipping,0
+890,45,Low,8,7.0,3,318.0,Push,Loyalty points,0
+891,30,Low,17,10.0,11,134.0,Email,Discount,1
+892,49,High,38,4.0,26,177.0,Push,Free shipping,1
+893,27,High,28,13.0,12,1.0,Call,Loyalty points,1
+894,31,Medium,44,18.0,5,140.0,SMS,Discount,0
+895,25,High,10,12.0,18,55.0,Push,Loyalty points,0
+896,34,High,44,9.0,22,49.0,Push,Free shipping,0
+897,18,Medium,49,11.0,19,230.0,Push,Free shipping,1
+898,52,Medium,11,12.0,8,79.0,Email,Discount,0
+899,18,High,30,15.0,3,202.0,SMS,Loyalty points,0
+900,21,Low,47,3.0,8,63.0,SMS,Free shipping,0
+901,61,Medium,26,5.0,24,16.0,Email,Loyalty points,0
+902,53,Low,30,4.0,12,151.0,Call,Free shipping,0
+903,57,High,13,19.0,26,235.0,Push,Loyalty points,1
+904,46,High,4,2.0,19,5.0,Push,Free shipping,0
+905,36,High,41,13.0,10,259.0,Email,Loyalty points,1
+906,64,High,46,17.0,10,347.0,SMS,Free shipping,1
+907,28,High,14,1.0,0,138.0,Push,Discount,0
+908,37,Medium,41,6.0,9,252.0,Call,Loyalty points,0
+909,45,High,5,12.0,16,137.0,SMS,Discount,0
+910,68,High,42,10.0,16,131.0,Call,Discount,1
+911,51,Low,36,1.0,5,101.0,SMS,Free shipping,1
+912,46,Medium,24,14.0,21,323.0,SMS,Discount,1
+913,66,High,30,4.0,4,69.0,Call,Discount,0
+914,66,Medium,21,18.0,26,57.0,SMS,Loyalty points,0
+915,29,High,17,6.0,23,184.0,SMS,Loyalty points,0
+916,33,Medium,11,3.0,4,232.0,SMS,Loyalty points,0
+917,46,Low,36,10.0,17,287.0,Push,Free shipping,0
+918,32,Low,13,17.0,12,257.0,Email,Discount,1
+919,28,High,49,12.0,11,313.0,Email,Discount,0
+920,28,Low,28,9.0,29,294.0,Push,Discount,0
+921,63,Low,3,3.0,15,250.0,SMS,Loyalty points,0
+922,40,High,17,18.0,26,162.0,Push,Loyalty points,1
+923,48,Low,27,9.0,4,330.0,Push,Discount,0
+924,52,Low,22,15.0,29,137.0,SMS,Free shipping,1
+925,54,Medium,41,9.0,17,327.0,Email,Discount,1
+926,46,Low,23,4.0,21,154.0,Email,Loyalty points,0
+927,34,High,31,15.0,6,202.0,Call,Loyalty points,0
+928,57,Medium,13,0.0,27,238.0,Call,Discount,0
+929,51,Medium,25,6.0,18,268.0,SMS,Free shipping,0
+930,43,Low,8,6.0,14,194.0,SMS,Free shipping,1
+931,51,Medium,38,2.0,29,36.0,Push,Loyalty points,0
+932,28,High,29,7.0,5,115.0,Push,Free shipping,0
+933,58,High,30,5.0,27,3.0,Push,Loyalty points,0
+934,43,Low,26,15.0,12,287.0,Email,Discount,0
+935,44,Low,32,5.0,4,299.0,SMS,Discount,0
+936,18,High,39,2.0,29,,SMS,Discount,1
+937,51,Low,0,18.0,23,169.0,SMS,Discount,0
+938,49,High,11,9.0,6,215.0,Push,Free shipping,0
+939,24,High,19,5.0,12,66.0,Call,Discount,1
+940,18,High,43,11.0,27,43.0,Call,Discount,1
+941,53,Medium,14,3.0,3,251.0,Email,Loyalty points,0
+942,62,Low,22,,22,246.0,Push,Free shipping,0
+943,28,Medium,21,10.0,5,3.0,Email,Discount,1
+944,18,Medium,8,1.0,24,1.0,Push,Discount,1
+945,59,Medium,20,11.0,4,257.0,SMS,Loyalty points,0
+946,27,High,36,1.0,9,27.0,SMS,Free shipping,1
+947,52,High,35,14.0,27,137.0,Call,Discount,1
+948,62,High,25,2.0,26,127.0,SMS,Loyalty points,1
+949,53,Medium,41,12.0,21,17.0,Email,Loyalty points,0
+950,30,Low,44,16.0,8,91.0,SMS,Loyalty points,0
+951,24,High,21,18.0,27,311.0,Call,Discount,0
+952,32,Low,5,,16,176.0,Email,Loyalty points,0
+953,60,Medium,12,8.0,26,350.0,Email,Discount,0
+954,49,High,7,18.0,16,232.0,SMS,Loyalty points,0
+955,29,High,11,6.0,20,168.0,Call,Loyalty points,0
+956,42,High,43,11.0,11,340.0,Push,Free shipping,1
+957,30,High,23,2.0,1,181.0,Email,Loyalty points,0
+958,20,Medium,19,8.0,27,109.0,Push,Free shipping,0
+959,26,High,49,16.0,16,3.0,Email,Discount,0
+960,63,Medium,22,15.0,23,226.0,Push,Free shipping,1
+961,46,High,42,4.0,27,176.0,Email,Free shipping,1
+962,33,Low,21,16.0,29,38.0,SMS,Discount,0
+963,54,High,39,7.0,7,156.0,Call,Loyalty points,0
+964,22,Medium,22,,5,232.0,SMS,Loyalty points,0
+965,27,Low,26,10.0,28,232.0,Email,Discount,0
+966,22,Medium,43,8.0,24,18.0,Push,Loyalty points,0
+967,65,Medium,26,10.0,20,100.0,SMS,Discount,0
+968,30,Medium,32,2.0,27,265.0,Push,Free shipping,0
+969,53,Medium,7,18.0,4,273.0,Call,Discount,0
+970,43,Medium,20,15.0,13,180.0,Push,Loyalty points,0
+971,51,High,34,1.0,28,253.0,Email,Discount,0
+972,57,Medium,20,1.0,10,184.0,Push,Loyalty points,1
+973,60,Medium,45,19.0,4,263.0,Push,Loyalty points,1
+974,49,High,9,14.0,6,220.0,Call,Loyalty points,0
+975,69,Medium,3,0.0,13,257.0,Email,Discount,0
+976,61,Medium,33,10.0,6,325.0,Call,Loyalty points,0
+977,31,Low,16,17.0,29,41.0,SMS,Loyalty points,1
+978,43,Low,31,5.0,4,290.0,Email,Discount,0
+979,43,High,1,17.0,21,128.0,SMS,Discount,0
+980,20,Medium,47,1.0,18,343.0,SMS,Free shipping,0
+981,55,High,0,9.0,2,276.0,SMS,Free shipping,0
+982,23,Low,29,11.0,16,286.0,Push,Loyalty points,0
+983,21,Medium,40,5.0,1,273.0,Push,Loyalty points,0
+984,61,Low,24,17.0,26,307.0,Push,Loyalty points,0
+985,54,High,35,0.0,15,40.0,Email,Free shipping,0
+986,53,Low,6,13.0,9,107.0,Email,Loyalty points,0
+987,65,High,13,1.0,0,39.0,Push,Free shipping,0
+988,61,High,2,1.0,21,245.0,Email,Free shipping,0
+989,32,High,22,6.0,21,309.0,Call,Free shipping,1
+990,21,High,15,2.0,9,198.0,Call,Free shipping,0
+991,37,Low,32,,13,261.0,Push,Discount,0
+992,63,Low,11,8.0,19,176.0,Call,Discount,0
+993,62,High,40,18.0,7,195.0,Call,Loyalty points,1
+994,18,High,4,7.0,18,42.0,Push,Loyalty points,0
+995,67,Low,31,3.0,16,297.0,Call,Discount,0
+996,20,Low,46,15.0,1,330.0,SMS,Loyalty points,0
+997,22,High,17,17.0,25,358.0,Push,Discount,0
+998,25,High,27,11.0,14,251.0,Email,Discount,1
+999,61,Low,0,6.0,9,228.0,Push,Loyalty points,0
+1000,32,Medium,10,2.0,2,149.0,Push,Free shipping,1

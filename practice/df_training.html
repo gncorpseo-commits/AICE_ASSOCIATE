@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>데이터프레임 집중 트레이닝</title>
+  <link rel="stylesheet" href="df_training.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎯 데이터프레임 집중 트레이닝</h1>
+      <p>문제은행 500개 · 초100 / 중300 / 고100</p>
+      <p>Seaborn:UCI = 8:2 데이터셋 혼합</p>
+    </header>
+
+    <section class="section">
+      <h2>무료 연습 데이터셋</h2>
+      <div id="datasetList" class="dataset-grid"></div>
+      <p class="stat-line">CSV 파일은 샘플 데이터로 포함되어 있으며, 전체 데이터는 Source 링크에서 받을 수 있습니다.</p>
+    </section>
+
+    <section class="section">
+      <h2>문제은행 필터</h2>
+      <div class="filters">
+        <select id="filterDifficulty">
+          <option value="all">All Levels</option>
+          <option value="easy">Easy (초급)</option>
+          <option value="medium">Medium (중급)</option>
+          <option value="hard">Hard (고급)</option>
+        </select>
+        <select id="filterDataset"></select>
+        <input id="filterQuery" type="text" placeholder="Search keyword..." />
+      </div>
+      <div class="stat-line">총 문제 수: <span id="totalCount">0</span></div>
+    </section>
+
+    <section class="section">
+      <h2>문제은행</h2>
+      <div id="questionList"></div>
+      <div id="scrollSentinel"></div>
+      <div id="loadingStatus" class="footer-note">스크롤하면 추가 문제가 로드됩니다.</div>
+      <div class="notebook-actions">
+        <button id="openInNotebook" class="notebook-btn">📒 노트북 템플릿 복사</button>
+        <button id="downloadNotebook" class="notebook-btn">⬇️ 노트북 파일 다운로드</button>
+        <button id="openNotebookLink" class="notebook-btn">🚀 노트북 바로 열기</button>
+        <button id="openColabLink" class="notebook-btn">☁️ Colab에서 열기</button>
+      </div>
+      <div class="notebook-guide">
+        <div><strong>Jupyter 실행:</strong> <code>python -m notebook</code></div>
+        <div><strong>열기 URL:</strong> <code>http://localhost:8888/notebooks/practice/df_training.ipynb</code></div>
+        <div class="guide-note">Jupyter가 실행 중일 때만 바로 열기가 동작합니다.</div>
+      </div>
+    </section>
+
+    <section class="section admin-panel" id="adminPanel">
+      <h2>관리자 검증 모듈</h2>
+      <div class="admin-controls">
+        <label class="admin-toggle">
+          <input type="checkbox" id="adminDebugToggle" />
+          디버그 로그 활성화
+        </label>
+        <button id="adminClearLog" class="admin-btn">로그 초기화</button>
+      </div>
+      <div class="admin-info">
+        <div>마지막 이벤트: <span id="adminLastEvent">-</span></div>
+        <div>렌더 카운트: <span id="adminRenderCount">0</span></div>
+        <div>토글 로드 성공: <span id="adminToggleLoaded">0</span></div>
+        <div>토글 이벤트 상태: <span id="adminToggleEvent">-</span></div>
+        <div>토글 캡처링: <span id="adminToggleCapture">-</span></div>
+      </div>
+      <pre id="adminLog" class="admin-log"></pre>
+    </section>
+
+    <p class="footer-note">
+      모든 문제는 데이터프레임 조작 훈련을 목표로 하며, 힌트/정답/상세 풀이를 토글로 제공합니다.
+    </p>
+  </div>
+
+  <script src="df_training.js"></script>
+</body>
+</html>

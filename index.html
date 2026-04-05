@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AICE Associate - Python/Java Code Reference</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            background: linear-gradient(90deg, #00d4ff, #7b2cbf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            color: #a0a0a0;
+            font-size: 1.1em;
+        }
+        
+        .warning {
+            background: rgba(255, 193, 7, 0.1);
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .warning strong {
+            color: #ffc107;
+        }
+        
+        .section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .section h2 {
+            color: #00d4ff;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(0, 212, 255, 0.3);
+        }
+        
+        .section h3 {
+            color: #7b2cbf;
+            margin: 20px 0 15px 0;
+        }
+        
+        .toggle-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .toggle-btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .toggle-btn.python {
+            background: rgba(55, 118, 171, 0.3);
+            color: #3776ab;
+        }
+        
+        .toggle-btn.java {
+            background: rgba(237, 139, 0, 0.3);
+            color: #ed8b00;
+        }
+        
+        .toggle-btn.active {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .toggle-btn.python.active {
+            background: #3776ab;
+            color: white;
+        }
+        
+        .toggle-btn.java.active {
+            background: #ed8b00;
+            color: white;
+        }
+        
+        .code-container {
+            position: relative;
+        }
+        
+        .code-block {
+            display: none;
+            background: #1e1e1e;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .code-block.active {
+            display: block;
+        }
+        
+        .code-header {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 15px;
+            font-size: 0.9em;
+            color: #a0a0a0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .code-header .lang-badge {
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+        
+        .code-header .lang-badge.python {
+            background: #3776ab;
+            color: white;
+        }
+        
+        .code-header .lang-badge.java {
+            background: #ed8b00;
+            color: white;
+        }
+        
+        pre {
+            margin: 0 !important;
+            padding: 20px !important;
+            background: #1e1e1e !important;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        
+        code {
+            font-family: 'Fira Code', 'Consolas', monospace;
+        }
+        
+        .note {
+            background: rgba(0, 212, 255, 0.1);
+            border-left: 4px solid #00d4ff;
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95em;
+        }
+
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 18px;
+            background: rgba(123, 44, 191, 0.2);
+            color: #d2b3ff;
+            border: 1px solid rgba(123, 44, 191, 0.5);
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .link-btn:hover {
+            background: rgba(123, 44, 191, 0.35);
+            transform: translateY(-1px);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            .toggle-btn {
+                padding: 10px 15px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 AICE Associate</h1>
+            <p>Python / Java Code Reference Guide</p>
+        </header>
+        
+        <div class="warning">
+            <strong>⚠️ Important:</strong> AICE Associate 시험은 <strong>Python만</strong> 사용 가능합니다. 
+            Java 코드는 학습 및 비교 목적으로만 제공됩니다.
+        </div>
+
+        <div class="quick-links">
+            <a class="link-btn" href="games/typing_game/index.html">🎮 타자 연습 게임</a>
+            <a class="link-btn" href="practice/df_training.html">🎯 데이터프레임 집중 트레이닝</a>
+        </div>
+        
+        <!-- Section 1: Data Loading -->
+        <div class="section">
+            <h2>1. Data Loading & Exploration</h2>
+            
+            <h3>1-1. Load CSV File</h3>
+            <div class="toggle-container">
+                <button class="toggle-btn python active" onclick="showCode('load', 'python')">
+                    🐍 Python
+                </button>
+                <button class="toggle-btn java" onclick="showCode('load', 'java')">
+                    ☕ Java
+                </button>
+            </div>
+            <div class="code-container" id="load">
+                <div class="code-block python active">
+                    <div class="code-header">
+                        <span>Data Loading</span>
+                        <span class="lang-badge python">Python</span>
+                    </div>
+                    <pre><code class="language-python">import pandas as pd
+
+# Load CSV file
+df = pd.read_csv('data.csv')
+
+# Preview data
+df.head()
+
+# Check shape
+print(f"Shape: {df.shape}")
+
+# Check info
+df.info()
+
+# Basic statistics
+df.describe()</code></pre>
+                </div>
+                <div class="code-block java">
+                    <div class="code-header">
+                        <span>Data Loading</span>
+                        <span class="lang-badge java">Java</span>
+                    </div>
+                    <pre><code class="language-java">import tech.tablesaw.api.*;
+import tech.tablesaw.io.csv.*;
+
+// Load CSV file (using Tablesaw library)
+Table df = Table.read().csv("data.csv");
+
+// Preview data
+System.out.println(df.first(5));
+
+// Check shape
+System.out.println("Rows: " + df.rowCount());
+System.out.println("Columns: " + df.columnCount());
+
+// Column info
+System.out.println(df.structure());
+
+// Basic statistics
+System.out.println(df.summary());</code></pre>
+                </div>
+            </div>
+            
+            <h3>1-2. Check Missing Values</h3>
+            <div class="toggle-container">
+                <button class="toggle-btn python active" onclick="showCode('missing', 'python')">
+                    🐍 Python
+                </button>
+                <button class="toggle-btn java" onclick="showCode('missing', 'java')">
+                    ☕ Java
+                </button>
+            </div>
+            <div class="code-container" id="missing">
+                <div class="code-block python active">
+                    <div class="code-header">
+                        <span>Missing Values</span>
+                        <span class="lang-badge python">Python</span>
+                    </div>
+                    <pre><code class="language-python"># Check missing values per column
+print(df.isna().sum())
+
+# Total missing values
+print(f"Total: {df.isna().sum().sum()}")
+
+# Missing value percentage
+print(df.isna().mean() * 100)</code></pre>
+                </div>
+                <div class="code-block java">
+                    <div class="code-header">
+                        <span>Missing Values</span>
+                        <span class="lang-badge java">Java</span>
+                    </div>
+                    <pre><code class="language-java">// Check missing values (Tablesaw)
+for (Column<?> col : df.columns()) {
+    int missing = col.countMissing();
+    System.out.println(col.name() + ": " + missing);
+}
+
+// Or using streams
+df.columns().forEach(col -> 
+    System.out.println(col.name() + ": " + col.countMissing())
+);</code></pre>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section 2: Preprocessing -->
+        <div class="section">
+            <h2>2. Data Preprocessing</h2>
+            
+            <h3>2-1. Handle Missing Values</h3>
+            <div class="toggle-container">
+                <button class="toggle-btn python active" onclick="showCode('fillna', 'python')">
+                    🐍 Python
+                </button>
+                <button class="toggle-btn java" onclick="showCode('fillna', 'java')">
+                    ☕ Java
+                </button>
+            </div>
+            <div class="code-container" id="fillna">
+                <div class="code-block python active">
+                    <div class="code-header">
+                        <span>Fill Missing Values</span>
+                        <span class="lang-badge python">Python</span>
+                    </div>
+                    <pre><code class="language-python"># Fill with mean (numeric)
+df['column'].fillna(df['column'].mean(), inplace=True)
+
+# Fill with median
+df['column'].fillna(df['column'].median(), inplace=True)
+
+# Fill with mode (categorical)
+df['column'].fillna(df['column'].mode()[0], inplace=True)
+
+# Fill all numeric columns with mean
+numeric_cols = df.select_dtypes(include=[np.number]).columns
+for col in numeric_cols:
+    df[col].fillna(df[col].mean(), inplace=True)</code></pre>
+                </div>
+                <div class="code-block java">
+                    <div class="code-header">
+                        <span>Fill Missing Values</span>
+                        <span class="lang-badge java">Java</span>
+                    </div>
+                    <pre><code class="language-java">import org.apache.commons.math3.stat.StatUtils;
+
+// Calculate mean
+double[] values = column.asDoubleArray();
+double mean = StatUtils.mean(values);
+
+// Fill missing with mean
+for (int i = 0; i < values.length; i++) {
+    if (Double.isNaN(values[i])) {
+        values[i] = mean;
+    }
+}
+
+// Using Tablesaw
+DoubleColumn col = df.doubleColumn("column");
+double mean = col.mean();
+col.set(col.isMissing(), mean);</code></pre>
+                </div>
+            </div>
+            
+            <h3>2-2. One-Hot Encoding</h3>
+            <div class="toggle-container">
+                <button class="toggle-btn python active" onclick="showCode('encoding', 'python')">
+                    🐍 Python
+                </button>
+                <button class="toggle-btn java" onclick="showCode('encoding', 'java')">
+                    ☕ Java
+                </button>
+            </div>
+            <div class="code-container" id="encoding">
+                <div class="code-block python active">
+                    <div class="code-header">
+                        <span>One-Hot Encoding</span>
+                        <span class="lang-badge python">Python</span>
+                    </div>
+                    <pre><code class="language-python"># One-Hot Encoding with pandas
+df_encoded = pd.get_dummies(df, columns=['category_col'])
+
+# Label Encoding
+from sklearn.preprocessing import LabelEncoder
+le = LabelEncoder()
+df['encoded'] = le.fit_transform(df['category_col'])</code></pre>
+                </div>
+                <div class="code-block java">
+                    <div class="code-header">
+                        <span>One-Hot Encoding</span>
+                        <span class="lang-badge java">Java</span>
+                    </div>
+                    <pre><code class="language-java">import smile.data.formula.Formula;
+import smile.data.type.StructType;
+
+// Using Smile library
+// One-Hot Encoding
+DataFrame encoded = smile.data.Operators.onehot(
+    df, "category_col"
+);
+
+// Label Encoding
+Map<String, Integer> labelMap = new HashMap<>();
+int index = 0;
+for (String value : df.stringColumn("category").unique()) {
+    labelMap.put(value, index++);
+}
+IntColumn encoded = df.stringColumn("category")
+    .map(labelMap::get);</code></pre>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section 3: Modeling -->
+        <div class="section">
+            <h2>3. Machine Learning Modeling</h2>
+            
+            <h3>3-1. Train/Test Split</h3>
+            <div class="toggle-container">
+                <button class="toggle-btn python active" onclick="showCode('split', 'python')">
+                    🐍 Python
+                </button>
+                <button class="toggle-btn java" onclick="showCode('split', 'java')">
+                    ☕ Java
+                </button>
+            </div>
+            <div class="code-container" id="split">
+                <div class="code-block python active">
+                    <div class="code-header">
+                        <span>Train/Test Split</span>
+                        <span class="lang-badge python">Python</span>
+                    </div>
+                    <pre><code class="language-python">from sklearn.model_selection import train_test_split
+
+# Split features and target
+X = df.drop(['target'], axis=1)
+y = df['target']
+
+# Split data
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+print(f"Train: {X_train.shape}, Test: {X_test.shape}")</code></pre>
+                </div>
+                <div class="code-block java">
+                    <div class="code-header">
+                        <span>Train/Test Split</span>
+                        <span class="lang-badge java">Java</span>
+                    </div>
+                    <pre><code class="language-java">import smile.validation.CrossValidation;
+
+// Using Smile library
+double[][] X = df.toArray();  // features
+int[] y = df.intColumn("target").toIntArray();
+
+// Simple split (80/20)
+int splitIndex = (int) (X.length * 0.8);
+
+double[][] X_train = Arrays.copyOfRange(X, 0, splitIndex);
+double[][] X_test = Arrays.copyOfRange(X, splitIndex, X.length);
+int[] y_train = Arrays.copyOfRange(y, 0, splitIndex);
+int[] y_test = Arrays.copyOfRange(y, splitIndex, y.length);</code></pre>
+                </div>
+            </div>
+            
+            <h3>3-2. Regression Model</h3>
+            <div class="toggle-container">
+                <button class="toggle-btn python active" onclick="showCode('regression', 'python')">
+                    🐍 Python
+                </button>
+                <button class="toggle-btn java" onclick="showCode('regression', 'java')">
+                    ☕ Java
+                </button>
+            </div>
+            <div class="code-container" id="regression">
+                <div class="code-block python active">
+                    <div class="code-header">
+                        <span>Regression Model</span>
+                        <span class="lang-badge python">Python</span>
+                    </div>
+                    <pre><code class="language-python">from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_squared_error, r2_score
+import numpy as np
+
+# Linear Regression
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+# Random Forest
+model = RandomForestRegressor(random_state=42)
+model.fit(X_train, y_train)
+
+# Prediction
+y_pred = model.predict(X_test)
+
+# Evaluation
+rmse = np.sqrt(mean_squared_error(y_test, y_pred))
+r2 = r2_score(y_test, y_pred)
+print(f"RMSE: {rmse:.4f}, R2: {r2:.4f}")</code></pre>
+                </div>
+                <div class="code-block java">
+                    <div class="code-header">
+                        <span>Regression Model</span>
+                        <span class="lang-badge java">Java</span>
+                    </div>
+                    <pre><code class="language-java">import smile.regression.*;
+import smile.validation.metric.*;
+
+// Linear Regression (Smile)
+LinearModel model = OLS.fit(
+    Formula.lhs("target"), df
+);
+
+// Random Forest
+RandomForest rf = RandomForest.fit(
+    Formula.lhs("target"), df
+);
+
+// Prediction
+double[] predictions = model.predict(testData);
+
+// Evaluation
+double rmse = RMSE.of(y_test, predictions);
+double r2 = R2.of(y_test, predictions);
+System.out.printf("RMSE: %.4f, R2: %.4f%n", rmse, r2);</code></pre>
+                </div>
+            </div>
+            
+            <h3>3-3. Classification Model</h3>
+            <div class="toggle-container">
+                <button class="toggle-btn python active" onclick="showCode('classification', 'python')">
+                    🐍 Python
+                </button>
+                <button class="toggle-btn java" onclick="showCode('classification', 'java')">
+                    ☕ Java
+                </button>
+            </div>
+            <div class="code-container" id="classification">
+                <div class="code-block python active">
+                    <div class="code-header">
+                        <span>Classification Model</span>
+                        <span class="lang-badge python">Python</span>
+                    </div>
+                    <pre><code class="language-python">from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score, f1_score
+
+# Logistic Regression
+model = LogisticRegression(random_state=42, max_iter=1000)
+model.fit(X_train, y_train)
+
+# Random Forest
+model = RandomForestClassifier(random_state=42)
+model.fit(X_train, y_train)
+
+# Prediction
+y_pred = model.predict(X_test)
+
+# Evaluation
+accuracy = accuracy_score(y_test, y_pred)
+f1 = f1_score(y_test, y_pred, average='weighted')
+print(f"Accuracy: {accuracy:.4f}, F1: {f1:.4f}")</code></pre>
+                </div>
+                <div class="code-block java">
+                    <div class="code-header">
+                        <span>Classification Model</span>
+                        <span class="lang-badge java">Java</span>
+                    </div>
+                    <pre><code class="language-java">import smile.classification.*;
+import smile.validation.metric.*;
+
+// Logistic Regression (Smile)
+LogisticRegression model = LogisticRegression.fit(
+    X_train, y_train
+);
+
+// Random Forest
+RandomForest rf = RandomForest.fit(
+    Formula.lhs("target"), df
+);
+
+// Prediction
+int[] predictions = model.predict(X_test);
+
+// Evaluation
+double accuracy = Accuracy.of(y_test, predictions);
+double f1 = FScore.of(y_test, predictions);
+System.out.printf("Accuracy: %.4f, F1: %.4f%n", accuracy, f1);</code></pre>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section 4: Visualization -->
+        <div class="section">
+            <h2>4. Data Visualization</h2>
+            
+            <h3>4-1. Histogram & Heatmap</h3>
+            <div class="toggle-container">
+                <button class="toggle-btn python active" onclick="showCode('viz', 'python')">
+                    🐍 Python
+                </button>
+                <button class="toggle-btn java" onclick="showCode('viz', 'java')">
+                    ☕ Java
+                </button>
+            </div>
+            <div class="code-container" id="viz">
+                <div class="code-block python active">
+                    <div class="code-header">
+                        <span>Visualization</span>
+                        <span class="lang-badge python">Python</span>
+                    </div>
+                    <pre><code class="language-python">import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Histogram
+plt.figure(figsize=(10, 6))
+sns.histplot(df['column'], kde=True)
+plt.title('Distribution')
+plt.show()
+
+# Correlation Heatmap
+plt.figure(figsize=(12, 8))
+sns.heatmap(df.corr(), annot=True, cmap='coolwarm')
+plt.title('Correlation Heatmap')
+plt.show()
+
+# Scatter plot
+plt.scatter(y_test, y_pred, alpha=0.5)
+plt.plot([min(y_test), max(y_test)], [min(y_test), max(y_test)], 'r--')
+plt.xlabel('Actual')
+plt.ylabel('Predicted')
+plt.show()</code></pre>
+                </div>
+                <div class="code-block java">
+                    <div class="code-header">
+                        <span>Visualization</span>
+                        <span class="lang-badge java">Java</span>
+                    </div>
+                    <pre><code class="language-java">import tech.tablesaw.plotly.Plot;
+import tech.tablesaw.plotly.api.*;
+
+// Using Tablesaw Plotly integration
+
+// Histogram
+Plot.show(
+    Histogram.create("Distribution", df, "column")
+);
+
+// Scatter plot
+Plot.show(
+    ScatterPlot.create(
+        "Actual vs Predicted",
+        df, "actual", "predicted"
+    )
+);
+
+// Heatmap (correlation)
+Plot.show(
+    Heatmap.create("Correlation", correlationMatrix)
+);</code></pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="note">
+            <strong>📌 Note:</strong> Java examples use the <strong>Smile</strong> and <strong>Tablesaw</strong> libraries. 
+            For AICE exam, focus on Python (pandas, sklearn, matplotlib, seaborn).
+        </div>
+        
+        <footer>
+            <p>AICE Associate Study Guide | Python/Java Code Reference</p>
+            <p style="margin-top: 10px; color: #444;">Good luck with your exam! 🍀</p>
+        </footer>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+    <script>
+        function showCode(containerId, language) {
+            const container = document.getElementById(containerId);
+            const blocks = container.querySelectorAll('.code-block');
+            const buttons = container.previousElementSibling.querySelectorAll('.toggle-btn');
+            
+            blocks.forEach(block => {
+                block.classList.remove('active');
+                if (block.classList.contains(language)) {
+                    block.classList.add('active');
+                }
+            });
+            
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.classList.contains(language)) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
