@@ -491,6 +491,25 @@ function showInstallModal() {
   if (modal) modal.classList.remove("hidden");
 }
 
+async function copyLocalRunCommand(buttonEl) {
+  const commandEl = document.getElementById("localRunCommand");
+  if (!commandEl) return;
+  const text = commandEl.textContent.trim();
+  if (!text) return;
+  try {
+    await navigator.clipboard.writeText(text);
+    if (buttonEl) {
+      const original = buttonEl.textContent;
+      buttonEl.textContent = "복사 완료";
+      setTimeout(() => {
+        buttonEl.textContent = original;
+      }, 1200);
+    }
+  } catch (err) {
+    alert("클립보드 복사에 실패했습니다. 수동으로 복사해 주세요.");
+  }
+}
+
 async function copyAnswerById(id, buttonEl) {
   const q = questionMap.get(id);
   if (!q) return;
@@ -1055,6 +1074,13 @@ document.addEventListener("DOMContentLoaded", () => {
     guideBtn.addEventListener("click", () => {
       const section = document.getElementById("localSetup");
       if (section) section.scrollIntoView({ behavior: "smooth" });
+    });
+  }
+
+  const copyLocalRun = document.getElementById("copyLocalRun");
+  if (copyLocalRun) {
+    copyLocalRun.addEventListener("click", () => {
+      copyLocalRunCommand(copyLocalRun);
     });
   }
 

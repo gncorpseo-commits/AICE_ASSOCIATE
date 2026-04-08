@@ -157,17 +157,26 @@ AICE_Associate/
 
 ## 🚀 시작하기
 
-### 1. 환경 설정
+### 1. 런처로 실행 (추천)
+- **Windows 런처 (exe)**: `launcher/windows/dist/AICE_Launcher.exe`
+- **macOS/Linux 런처**: `launcher/unix/run.sh`
+  - 실행 권한: `chmod +x launcher/unix/run.sh`
+  - 실행: `./launcher/unix/run.sh`
+  - Windows Smart App Control이 exe를 차단하면 PowerShell/BAT 스크립트를 사용하세요.
+
+### 2. 직접 실행 (터미널)
 ```bash
 pip install -r requirements.txt
+python -m http.server 8000
+python -m uvicorn server.app:app --host 0.0.0.0 --port 8001
 ```
 
-### 2. Jupyter Notebook 실행
+### 3. Jupyter Notebook 실행
 ```bash
 jupyter notebook
 ```
 
-### 3. 학습 순서
+### 4. 학습 순서
 1. `basics/` 폴더의 기초 노트북 학습
 2. `templates/` 폴더의 템플릿 숙지
 3. `mock_exams/level_1_basic/` 부터 순차적으로 풀이

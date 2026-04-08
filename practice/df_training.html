@@ -78,12 +78,24 @@
           <p>자동 설치 및 서버 실행 스크립트</p>
           <a id="downloadWinPs" class="setup-btn" href="../setup/install_and_run.ps1" download>⬇️ PowerShell 스크립트</a>
           <a id="downloadWinBat" class="setup-btn" href="../setup/install_and_run.bat" download>⬇️ BAT 스크립트</a>
+          <p class="guide-note">또는 런처 실행 (다운로드/압축/실행 자동)</p>
+          <a class="setup-btn" href="../launcher/windows/dist/AICE_Launcher.exe">⬇️ Windows 런처 (exe)</a>
+          <p class="guide-note">Smart App Control이 차단할 수 있습니다. 차단 시 PowerShell 스크립트를 사용하세요.</p>
         </div>
         <div class="setup-card">
           <h3>소스 다운로드로 실행</h3>
           <p>스마트 앱 컨트롤 차단 없이 직접 실행</p>
           <a class="setup-btn" href="https://github.com/gncorpseo-commits/AICE_ASSOCIATE/archive/refs/heads/main.zip">⬇️ 소스 ZIP 다운로드</a>
+          <button id="copyLocalRun" class="setup-btn" type="button">📋 원클릭 실행 복사</button>
           <p class="guide-note">다운로드 → 압축해제 → 폴더 안에서 실행</p>
+          <pre id="localRunCommand" class="setup-code">$zip="$env:TEMP\AICE_ASSOCIATE.zip"
+$dir="$env:TEMP\AICE_ASSOCIATE"
+Invoke-WebRequest "https://github.com/gncorpseo-commits/AICE_ASSOCIATE/archive/refs/heads/main.zip" -OutFile $zip
+if (Test-Path $dir) { Remove-Item -Recurse -Force $dir }
+Expand-Archive $zip -DestinationPath $env:TEMP -Force
+Rename-Item "$env:TEMP\AICE_ASSOCIATE-main" "AICE_ASSOCIATE" -Force
+Unblock-File "$dir\setup\install_and_run.bat"
+Start-Process "$dir\setup\install_and_run.bat"</pre>
           <div class="guide-note">
             PowerShell:
             <code>cd "압축해제된 폴더"</code> →
@@ -95,6 +107,8 @@
           <h3>macOS / Linux</h3>
           <p>터미널에서 실행하는 쉘 스크립트</p>
           <a id="downloadUnixSh" class="setup-btn" href="../setup/install_and_run.sh" download>⬇️ Shell 스크립트</a>
+          <p class="guide-note">또는 런처 스크립트 (다운로드/압축/실행 자동)</p>
+          <a class="setup-btn" href="../launcher/unix/run.sh" download>⬇️ macOS/Linux 런처</a>
         </div>
       </div>
       <div class="guide-note">
