@@ -80,6 +80,18 @@
           <a id="downloadWinBat" class="setup-btn" href="../setup/install_and_run.bat" download>⬇️ BAT 스크립트</a>
         </div>
         <div class="setup-card">
+          <h3>소스 다운로드로 실행</h3>
+          <p>스마트 앱 컨트롤 차단 없이 직접 실행</p>
+          <a class="setup-btn" href="https://github.com/gncorpseo-commits/AICE_ASSOCIATE/archive/refs/heads/main.zip">⬇️ 소스 ZIP 다운로드</a>
+          <p class="guide-note">다운로드 → 압축해제 → 폴더 안에서 실행</p>
+          <div class="guide-note">
+            PowerShell:
+            <code>cd "압축해제된 폴더"</code> →
+            <code>py -3.11 -m http.server 8000</code> →
+            <code>py -3.11 -m uvicorn server.app:app --host 0.0.0.0 --port 8001</code>
+          </div>
+        </div>
+        <div class="setup-card">
           <h3>macOS / Linux</h3>
           <p>터미널에서 실행하는 쉘 스크립트</p>
           <a id="downloadUnixSh" class="setup-btn" href="../setup/install_and_run.sh" download>⬇️ Shell 스크립트</a>
