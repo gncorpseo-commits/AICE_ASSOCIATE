@@ -296,17 +296,17 @@ function buildQuestion(id, diff, ds, template) {
 function generateQuestions() {
   const list = [];
   let id = 1;
-  const easyCount = 100;
-  const mediumCount = 170;
-  const hardCount = 60;
-  const aiceCount = 60;
-  const vizCount = 30;
-  const numpyCount = 20;
-  const tfCount = 10;
-  const xgbCount = 10;
-  const pipelineCount = 20;
-  const evaluationCount = 15;
-  const interpretCount = 5;
+  const easyCount = 120;
+  const mediumCount = 204;
+  const hardCount = 72;
+  const aiceCount = 72;
+  const vizCount = 36;
+  const numpyCount = 24;
+  const tfCount = 12;
+  const xgbCount = 12;
+  const pipelineCount = 24;
+  const evaluationCount = 18;
+  const interpretCount = 6;
   const dsList = datasets;
 
   function pushQuestions(count, diff, templateList) {
