@@ -1,17 +1,22 @@
 $ErrorActionPreference = "Stop"
 
-$root = Resolve-Path (Join-Path $PSScriptRoot "..")
+$scriptRoot = if ($PSScriptRoot) { $PSScriptRoot } else { Split-Path -Parent $MyInvocation.MyCommand.Path }
+if (-not $scriptRoot) {
+  $scriptRoot = (Get-Location).Path
+}
+$root = Resolve-Path (Join-Path $scriptRoot "..")
 if (-not (Test-Path (Join-Path $root "server\requirements.txt"))) {
   Write-Host "Project files not found next to this script."
   Write-Host "Downloading latest project zip..."
-  $zipPath = Join-Path $env:TEMP "AICE_ASSOCIATE.zip"
-  $extractRoot = Join-Path $env:TEMP "AICE_ASSOCIATE"
-  Invoke-WebRequest "https://github.com/gncorpseo-commits/AICE_ASSOCIATE/archive/refs/heads/main.zip" -OutFile $zipPath
+  $tempRoot = if ($env:TEMP) { $env:TEMP } else { [IO.Path]::GetTempPath() }
+  $zipPath = Join-Path $tempRoot "AICE_ASSOCIATE.zip"
+  $extractRoot = Join-Path $tempRoot "AICE_ASSOCIATE"
+  Invoke-WebRequest "https://github.com/gncorpseo-commits/AICE_ASSOCIATE/archive/refs/heads/main.zip" -OutFile $zipPath -UseBasicParsing
   if (Test-Path $extractRoot) {
     Remove-Item -Recurse -Force $extractRoot
   }
-  Expand-Archive -Path $zipPath -DestinationPath $env:TEMP -Force
-  $expanded = Join-Path $env:TEMP "AICE_ASSOCIATE-main"
+  Expand-Archive -Path $zipPath -DestinationPath $tempRoot -Force
+  $expanded = Join-Path $tempRoot "AICE_ASSOCIATE-main"
   if (Test-Path $expanded) {
     Rename-Item $expanded "AICE_ASSOCIATE" -Force
   }
