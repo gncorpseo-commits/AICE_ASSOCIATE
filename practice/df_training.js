@@ -54,6 +54,7 @@ const glossary = {
   drop_duplicates: { ko: "중복 제거", pron: "드롭 듀플리케이츠", en: "drop_duplicates", def: "중복 행 제거", usage: "df.drop_duplicates()", example: "df.drop_duplicates(subset=['{{cat}}'])" },
   sample: { ko: "무작위 샘플", pron: "샘플", en: "sample", def: "무작위 샘플 추출", usage: "df.sample(n=5)", example: "df.sample(frac=0.1, random_state=42)" },
   get_dummies: { ko: "원-핫 인코딩", pron: "겟 더미즈", en: "get_dummies", def: "범주형 컬럼을 원-핫 인코딩", usage: "pd.get_dummies(df, columns=['{{cat}}'])", example: "pd.get_dummies(df, columns=['{{cat}}'])" },
+  label_encoder: { ko: "라벨 인코딩", pron: "라벨 인코더", en: "LabelEncoder", def: "범주형 값을 0,1,2...로 변환", usage: "from sklearn.preprocessing import LabelEncoder\nle = LabelEncoder()\ndf['{{cat}}_encoded'] = le.fit_transform(df['{{cat}}'])", example: "df['{{cat}}_encoded'] = le.fit_transform(df['{{cat}}'])" },
   train_test_split: { ko: "학습/검증 분리", pron: "트레인 테스트 스플릿", en: "train_test_split", def: "데이터를 학습/검증으로 분리", usage: "from sklearn.model_selection import train_test_split\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)", example: "train_test_split(X, y, test_size=0.2, random_state=42)" },
   standard_scaler: { ko: "표준화", pron: "스탠다드 스케일러", en: "StandardScaler", def: "평균 0, 표준편차 1로 스케일링", usage: "from sklearn.preprocessing import StandardScaler\nscaler = StandardScaler()\nX_scaled = scaler.fit_transform(X)", example: "StandardScaler().fit_transform(X)" },
   minmax_scaler: { ko: "정규화", pron: "민맥스 스케일러", en: "MinMaxScaler", def: "0~1 범위로 스케일링", usage: "from sklearn.preprocessing import MinMaxScaler\nscaler = MinMaxScaler()\nX_scaled = scaler.fit_transform(X)", example: "MinMaxScaler().fit_transform(X)" },
@@ -63,6 +64,7 @@ const glossary = {
   eval_regression_full: { ko: "회귀 평가", pron: "이벨류에이션", en: "RMSE/MAE/R2", def: "회귀 성능 지표 계산", usage: "from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score\nrmse = (mean_squared_error(y_test, y_pred) ** 0.5)\nmae = mean_absolute_error(y_test, y_pred)\nr2 = r2_score(y_test, y_pred)", example: "mae = mean_absolute_error(y_test, y_pred)" },
   eval_classification: { ko: "분류 평가", pron: "이벨류에이션", en: "Accuracy/F1", def: "분류 성능 지표 계산", usage: "from sklearn.metrics import accuracy_score, f1_score\nacc = accuracy_score(y_test, y_pred)\nf1 = f1_score(y_test, y_pred, average='weighted')", example: "accuracy_score(y_test, y_pred)" },
   eval_classification_full: { ko: "분류 평가", pron: "이벨류에이션", en: "Accuracy/Precision/Recall/F1", def: "분류 성능 지표 계산", usage: "from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score\nacc = accuracy_score(y_test, y_pred)\nprec = precision_score(y_test, y_pred, average='weighted')\nrec = recall_score(y_test, y_pred, average='weighted')\nf1 = f1_score(y_test, y_pred, average='weighted')", example: "f1 = f1_score(y_test, y_pred, average='weighted')" },
+  eval_confusion: { ko: "혼동 행렬", pron: "컨퓨전 매트릭스", en: "confusion_matrix", def: "분류 결과 혼동 행렬 계산", usage: "from sklearn.metrics import confusion_matrix\ncm = confusion_matrix(y_test, y_pred)", example: "cm = confusion_matrix(y_test, y_pred)" },
   pipeline_regression: { ko: "회귀 파이프라인", pron: "파이프라인", en: "Pipeline Regression", def: "전처리+모델 학습 파이프라인 구성", usage: "from sklearn.model_selection import train_test_split\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.linear_model import LinearRegression\nX = df.drop(['{{num}}'], axis=1).select_dtypes(include='number')\ny = df['{{num}}']\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\nscaler = StandardScaler()\nX_train_scaled = scaler.fit_transform(X_train)\nX_test_scaled = scaler.transform(X_test)\nmodel = LinearRegression()\nmodel.fit(X_train_scaled, y_train)\ny_pred = model.predict(X_test_scaled)", example: "y_pred = model.predict(X_test_scaled)" },
   pipeline_classification: { ko: "분류 파이프라인", pron: "파이프라인", en: "Pipeline Classification", def: "전처리+모델 학습 파이프라인 구성", usage: "from sklearn.model_selection import train_test_split\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.linear_model import LogisticRegression\nX = pd.get_dummies(df.drop(['{{cat}}'], axis=1), drop_first=True)\ny = df['{{cat}}']\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)\nscaler = StandardScaler()\nX_train_scaled = scaler.fit_transform(X_train)\nX_test_scaled = scaler.transform(X_test)\nmodel = LogisticRegression(max_iter=1000)\nmodel.fit(X_train_scaled, y_train)\ny_pred = model.predict(X_test_scaled)", example: "y_pred = model.predict(X_test_scaled)" },
   leakage_check: { ko: "데이터 누수 방지", pron: "데이터 누수", en: "Leakage Check", def: "전처리 순서를 올바르게 유지", usage: "from sklearn.model_selection import train_test_split\nfrom sklearn.preprocessing import StandardScaler\nX = df.drop(['{{num}}'], axis=1).select_dtypes(include='number')\ny = df['{{num}}']\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\nscaler = StandardScaler()\nX_train_scaled = scaler.fit_transform(X_train)\nX_test_scaled = scaler.transform(X_test)", example: "X_test_scaled = scaler.transform(X_test)" },
@@ -70,12 +72,15 @@ const glossary = {
   seaborn_scatter: { ko: "산점도", pron: "스캐터", en: "seaborn.scatterplot", def: "두 변수의 관계를 산점도로 시각화", usage: "import seaborn as sns\nsns.scatterplot(data=df, x='{{num}}', y='{{num2}}')", example: "sns.scatterplot(data=df, x='{{num}}', y='{{num2}}')" },
   seaborn_box: { ko: "박스플롯", pron: "박스 플롯", en: "seaborn.boxplot", def: "범주별 분포를 박스플롯으로 시각화", usage: "import seaborn as sns\nsns.boxplot(data=df, x='{{cat}}', y='{{num}}')", example: "sns.boxplot(data=df, x='{{cat}}', y='{{num}}')" },
   seaborn_count: { ko: "카운트플롯", pron: "카운트 플롯", en: "seaborn.countplot", def: "범주형 빈도를 시각화", usage: "import seaborn as sns\nsns.countplot(data=df, x='{{cat}}')", example: "sns.countplot(data=df, x='{{cat}}')" },
+  seaborn_heatmap: { ko: "히트맵", pron: "히트맵", en: "seaborn.heatmap", def: "상관관계 히트맵 시각화", usage: "import seaborn as sns\ncorr = df.select_dtypes(include='number').corr()\nsns.heatmap(corr, annot=True)", example: "sns.heatmap(corr, annot=True)" },
   matplotlib_hist: { ko: "히스토그램", pron: "히스토그램", en: "matplotlib.hist", def: "수치형 분포를 히스토그램으로 시각화", usage: "import matplotlib.pyplot as plt\nplt.hist(df['{{num}}'], bins=20)\nplt.show()", example: "plt.hist(df['{{num}}'], bins=20)" },
   matplotlib_line: { ko: "라인차트", pron: "라인 차트", en: "matplotlib.plot", def: "두 수치형 변수의 추이를 선 그래프로 표시", usage: "import matplotlib.pyplot as plt\nplt.plot(df['{{num}}'], df['{{num2}}'])\nplt.show()", example: "plt.plot(df['{{num}}'], df['{{num2}}'])" },
   matplotlib_bar: { ko: "막대차트", pron: "바 차트", en: "matplotlib.bar", def: "범주형 집계를 막대 그래프로 시각화", usage: "import matplotlib.pyplot as plt\ncounts = df['{{cat}}'].value_counts()\nplt.bar(counts.index, counts.values)\nplt.show()", example: "plt.bar(counts.index, counts.values)" },
   numpy_mean: { ko: "평균", pron: "민", en: "numpy.mean", def: "수치형 평균 계산", usage: "import numpy as np\nnp.mean(df['{{num}}'])", example: "np.mean(df['{{num}}'])" },
   numpy_std: { ko: "표준편차", pron: "스탠다드 데비에이션", en: "numpy.std", def: "수치형 표준편차 계산", usage: "import numpy as np\nnp.std(df['{{num}}'])", example: "np.std(df['{{num}}'])" },
   numpy_corr: { ko: "상관계수", pron: "코릴레이션", en: "numpy.corrcoef", def: "두 수치형 변수의 상관계수 계산", usage: "import numpy as np\nnp.corrcoef(df['{{num}}'], df['{{num2}}'])", example: "np.corrcoef(df['{{num}}'], df['{{num2}}'])" },
+  numpy_median: { ko: "중앙값", pron: "미디언", en: "numpy.median", def: "수치형 중앙값 계산", usage: "import numpy as np\nnp.median(df['{{num}}'])", example: "np.median(df['{{num}}'])" },
+  numpy_percentile: { ko: "백분위수", pron: "퍼센타일", en: "numpy.percentile", def: "수치형 백분위수 계산", usage: "import numpy as np\nnp.percentile(df['{{num}}'], 75)", example: "np.percentile(df['{{num}}'], 75)" },
   tf_regression: { ko: "텐서플로 회귀", pron: "텐서플로", en: "TensorFlow Regression", def: "간단한 Dense 모델로 회귀 학습", usage: "import tensorflow as tf\nfrom tensorflow import keras\nX = df.drop(['{{num}}'], axis=1).select_dtypes(include='number')\ny = df['{{num}}']\nmodel = keras.Sequential([keras.layers.Dense(32, activation='relu'), keras.layers.Dense(1)])\nmodel.compile(optimizer='adam', loss='mse')\nmodel.fit(X, y, epochs=3, verbose=0)\nmodel.predict(X[:5])", example: "model.predict(X[:5])" },
   tf_classification: { ko: "텐서플로 분류", pron: "텐서플로", en: "TensorFlow Classification", def: "간단한 Dense 모델로 분류 학습", usage: "import tensorflow as tf\nfrom tensorflow import keras\nX = pd.get_dummies(df.drop(['{{cat}}'], axis=1), drop_first=True)\ny = pd.factorize(df['{{cat}}'])[0]\nmodel = keras.Sequential([keras.layers.Dense(32, activation='relu'), keras.layers.Dense(1, activation='sigmoid')])\nmodel.compile(optimizer='adam', loss='binary_crossentropy')\nmodel.fit(X, y, epochs=3, verbose=0)\nmodel.predict(X[:5])", example: "model.predict(X[:5])" },
   xgb_regression: { ko: "XGBoost 회귀", pron: "엑스지부스트", en: "XGBoost Regressor", def: "XGBoost 회귀 모델 학습", usage: "import xgboost as xgb\nX = df.drop(['{{num}}'], axis=1).select_dtypes(include='number')\ny = df['{{num}}']\nmodel = xgb.XGBRegressor(n_estimators=20, max_depth=3, learning_rate=0.1)\nmodel.fit(X, y)\nmodel.predict(X[:5])", example: "model.predict(X[:5])" },
@@ -130,6 +135,7 @@ const templates = {
     { op: "qcut", taskKo: "{{num}}를 4분위로 나누세요.", taskEn: "Quantile-bin {{num}} into 4.", needs: { num: 1 } },
     { op: "apply", taskKo: "{{num}}에 대해 제곱 컬럼을 생성하세요.", taskEn: "Create squared feature from {{num}} using apply.", needs: { num: 1 } },
     { op: "map", taskKo: "{{cat}}을 숫자 값으로 매핑하세요.", taskEn: "Map {{cat}} to numeric values.", needs: { cat: 1 } },
+    { op: "label_encoder", taskKo: "{{cat}}을 LabelEncoder로 인코딩하세요.", taskEn: "Label-encode {{cat}} using LabelEncoder.", needs: { cat: 1 } },
     { op: "drop_duplicates", taskKo: "{{cat}} 기준 중복 행을 제거하세요.", taskEn: "Drop duplicates based on {{cat}}.", needs: { cat: 1 } },
     { op: "sample", taskKo: "랜덤으로 5행을 추출하세요.", taskEn: "Sample 5 random rows.", needs: {} },
     { op: "get_dummies", taskKo: "범주형 컬럼 {{cat}}을 원-핫 인코딩하세요.", taskEn: "One-hot encode {{cat}}.", needs: { cat: 1 } },
@@ -162,7 +168,8 @@ const templates = {
   ],
   evaluation: [
     { op: "eval_regression_full", taskKo: "회귀 평가 지표(RMSE/MAE/R2)를 계산하세요.", taskEn: "Compute RMSE/MAE/R2 for regression.", needs: { num: 1 } },
-    { op: "eval_classification_full", taskKo: "분류 지표(Accuracy/Precision/Recall/F1)를 계산하세요.", taskEn: "Compute Accuracy/Precision/Recall/F1.", needs: { cat: 1 } }
+    { op: "eval_classification_full", taskKo: "분류 지표(Accuracy/Precision/Recall/F1)를 계산하세요.", taskEn: "Compute Accuracy/Precision/Recall/F1.", needs: { cat: 1 } },
+    { op: "eval_confusion", taskKo: "분류 결과 혼동 행렬을 계산하세요.", taskEn: "Compute the confusion matrix.", needs: { cat: 1 } }
   ],
   interpret: [
     { op: "interpret_scatter", taskKo: "{{num}}와 {{num2}} 산점도를 보고 한 줄 인사이트를 작성하세요.", taskEn: "Write one-line insight from {{num}} vs {{num2}}.", needs: { num: 2 } }
@@ -171,6 +178,7 @@ const templates = {
     { op: "seaborn_scatter", taskKo: "{{num}}와 {{num2}}의 관계를 산점도로 그리세요.", taskEn: "Draw a scatter plot of {{num}} vs {{num2}}.", needs: { num: 2 } },
     { op: "seaborn_box", taskKo: "{{cat}}별 {{num}} 분포를 박스플롯으로 그리세요.", taskEn: "Draw a boxplot of {{num}} by {{cat}}.", needs: { cat: 1, num: 1 } },
     { op: "seaborn_count", taskKo: "{{cat}}의 빈도를 카운트플롯으로 그리세요.", taskEn: "Draw a countplot for {{cat}}.", needs: { cat: 1 } },
+    { op: "seaborn_heatmap", taskKo: "수치형 컬럼 상관관계 히트맵을 그리세요.", taskEn: "Draw a correlation heatmap.", needs: { num: 1 } },
     { op: "matplotlib_hist", taskKo: "{{num}} 분포를 히스토그램으로 표시하세요.", taskEn: "Plot a histogram of {{num}}.", needs: { num: 1 } },
     { op: "matplotlib_line", taskKo: "{{num}}와 {{num2}}를 라인차트로 그리세요.", taskEn: "Plot a line chart for {{num}} vs {{num2}}.", needs: { num: 2 } },
     { op: "matplotlib_bar", taskKo: "{{cat}} 빈도를 막대차트로 표시하세요.", taskEn: "Plot a bar chart of {{cat}} counts.", needs: { cat: 1 } }
@@ -178,7 +186,9 @@ const templates = {
   numpy: [
     { op: "numpy_mean", taskKo: "{{num}}의 평균을 계산하세요.", taskEn: "Compute the mean of {{num}}.", needs: { num: 1 } },
     { op: "numpy_std", taskKo: "{{num}}의 표준편차를 계산하세요.", taskEn: "Compute the standard deviation of {{num}}.", needs: { num: 1 } },
-    { op: "numpy_corr", taskKo: "{{num}}와 {{num2}}의 상관계수를 계산하세요.", taskEn: "Compute correlation of {{num}} and {{num2}}.", needs: { num: 2 } }
+    { op: "numpy_corr", taskKo: "{{num}}와 {{num2}}의 상관계수를 계산하세요.", taskEn: "Compute correlation of {{num}} and {{num2}}.", needs: { num: 2 } },
+    { op: "numpy_median", taskKo: "{{num}}의 중앙값을 계산하세요.", taskEn: "Compute the median of {{num}}.", needs: { num: 1 } },
+    { op: "numpy_percentile", taskKo: "{{num}}의 75퍼센타일을 계산하세요.", taskEn: "Compute the 75th percentile of {{num}}.", needs: { num: 1 } }
   ],
   tensorflow: [
     { op: "tf_regression", taskKo: "{{num}} 타겟으로 간단한 회귀 모델을 학습하세요.", taskEn: "Train a regression model with target {{num}}.", needs: { num: 1 } },
@@ -217,6 +227,7 @@ function buildQuestion(id, diff, ds, template) {
     "eval_classification",
     "eval_regression_full",
     "eval_classification_full",
+    "eval_confusion",
     "pipeline_regression",
     "pipeline_classification",
     "leakage_check",
@@ -227,7 +238,7 @@ function buildQuestion(id, diff, ds, template) {
     "xgb_regression",
     "xgb_classification"
   ];
-  const isClassification = ["logistic_regression", "eval_classification", "eval_classification_full", "pipeline_classification", "tf_classification", "xgb_classification"].includes(template.op);
+  const isClassification = ["logistic_regression", "eval_classification", "eval_classification_full", "eval_confusion", "pipeline_classification", "tf_classification", "xgb_classification"].includes(template.op);
   const targetCol = isClassification ? (cat || num) : num;
   const xyBlock = [
     ``,
@@ -252,13 +263,13 @@ function buildQuestion(id, diff, ds, template) {
     columns: { num, num2, cat, cat2 }
   };
   const libraries = ["pandas"];
-  if (["train_test_split", "standard_scaler", "minmax_scaler", "eval_regression_full", "eval_classification_full", "pipeline_regression", "pipeline_classification", "leakage_check"].includes(template.op)) {
+  if (["train_test_split", "standard_scaler", "minmax_scaler", "eval_regression_full", "eval_classification_full", "pipeline_regression", "pipeline_classification", "leakage_check", "label_encoder", "eval_confusion"].includes(template.op)) {
     libraries.push("sklearn");
   }
   if (["linear_regression", "logistic_regression"].includes(template.op)) {
     libraries.push("sklearn");
   }
-  if (["eval_regression", "eval_classification"].includes(template.op)) {
+  if (["eval_regression", "eval_classification", "eval_regression_full", "eval_classification_full", "eval_confusion"].includes(template.op)) {
     libraries.push("sklearn");
   }
   if (template.op.startsWith("seaborn_")) {
