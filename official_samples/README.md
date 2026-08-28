@@ -33,6 +33,20 @@ KT AICE Associate 실기시험과 **같은 형식**의 공식 샘플입니다.
 
 ## 실행 방법
 
+### Windows (추천)
+
+프로젝트 루트의 `start_study.bat` 를 실행하세요. Python 설치부터 Jupyter까지 한 번에 진행합니다.
+
+```powershell
+cd C:\project\GN_Build_Up\AICE_Associate_samples
+git pull
+.\start_study.bat
+```
+
+브라우저가 열리면 `regression/problem.ipynb` 부터 풉니다.
+
+### Jupyter를 직접 켤 때
+
 노트북과 CSV는 **같은 폴더**에서 열어야 합니다.
 
 ```bash

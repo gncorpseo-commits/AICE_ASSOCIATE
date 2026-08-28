@@ -175,6 +175,17 @@ AICE_Associate/
 
 ## 🚀 시작하기
 
+### Windows에서 공식 샘플 바로 풀기
+프로젝트 폴더에서 `start_study.bat` 을 실행하세요. Python이 없으면 설치하고 Jupyter를 엽니다.
+
+```powershell
+cd C:\project\GN_Build_Up\AICE_Associate_samples
+git pull
+.\start_study.bat
+```
+
+자세한 설명: [`START_HERE_Windows.md`](START_HERE_Windows.md)
+
 ### 1. 런처로 실행 (추천)
 - **Windows 런처 (exe)**: `launcher/windows/dist/AICE_Launcher.exe`
 - **macOS/Linux 런처**: `launcher/unix/run.sh`
