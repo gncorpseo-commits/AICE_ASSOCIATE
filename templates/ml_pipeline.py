@@ -26,7 +26,7 @@ import seaborn as sns
 
 # sklearn - 모델링
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder, StandardScaler
+from sklearn.preprocessing import LabelEncoder, StandardScaler, RobustScaler
 
 # sklearn - 회귀 모델
 from sklearn.linear_model import LinearRegression
@@ -307,7 +307,38 @@ print("""
 
 
 # ============================================================================
-# 15. (선택) 피처 중요도 확인 (RandomForest 사용 시)
+# 15. (선택) 공식 샘플 패턴 — IQR / RobustScaler / Keras
+# ============================================================================
+# # IQR 이상치 제거
+# q1 = df['col'].quantile(0.25)
+# q3 = df['col'].quantile(0.75)
+# iqr = q3 - q1
+# lower_fence, upper_fence = q1 - 1.5 * iqr, q3 + 1.5 * iqr
+# df = df.drop(df[(df['col'] > upper_fence) | (df['col'] < lower_fence)].index, axis=0)
+#
+# from sklearn.preprocessing import RobustScaler
+# rs = RobustScaler()
+# X_train = rs.fit_transform(X_train)
+# X_valid = rs.transform(X_valid)
+#
+# # Keras 회귀 예시 (분류는 relu + sigmoid + binary_crossentropy)
+# from tensorflow.keras.models import Sequential
+# from tensorflow.keras.layers import Dense, Dropout
+# from tensorflow.keras.callbacks import EarlyStopping
+# model = Sequential()
+# model.add(Dense(64, activation='selu', input_dim=X.shape[1]))
+# model.add(Dropout(0.1))
+# model.add(Dense(32, activation='selu'))
+# model.add(Dense(16, activation='selu'))
+# model.add(Dense(1, activation='linear'))
+# estop = EarlyStopping(monitor='val_loss', patience=9)
+# model.compile(optimizer='adam', loss='mean_squared_error', metrics=['mse'])
+# history = model.fit(X_train, y_train, batch_size=128, epochs=50,
+#                     validation_data=(X_valid, y_valid), callbacks=[estop])
+
+
+# ============================================================================
+# 16. (선택) 피처 중요도 확인 (RandomForest 사용 시)
 # ============================================================================
 # if hasattr(model, 'feature_importances_'):
 #     feature_importance = pd.DataFrame({

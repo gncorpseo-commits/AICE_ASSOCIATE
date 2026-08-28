@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AICE Associate 공식 샘플문항</title>
+    <link rel="icon" href="../assets/gn-icon.svg" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 960px; margin: 0 auto; }
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            margin-bottom: 24px;
+        }
+        header h1 {
+            font-size: 2.2em;
+            background: linear-gradient(90deg, #00d4ff, #7b2cbf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+        header p { color: #a0a0a0; }
+        .back {
+            display: inline-block;
+            margin-bottom: 16px;
+            color: #d2b3ff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .note {
+            background: rgba(255, 193, 7, 0.1);
+            border-left: 4px solid #ffc107;
+            padding: 14px 18px;
+            margin-bottom: 24px;
+            border-radius: 0 10px 10px 0;
+            color: #e0e0e0;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-bottom: 24px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 24px;
+        }
+        .card h2 { color: #00d4ff; margin-bottom: 10px; }
+        .card .meta { color: #a0a0a0; font-size: 0.95em; margin-bottom: 16px; line-height: 1.5; }
+        .links { display: flex; flex-wrap: wrap; gap: 10px; }
+        .links a {
+            display: inline-block;
+            padding: 10px 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            background: rgba(123, 44, 191, 0.35);
+            color: #d2b3ff;
+            border: 1px solid rgba(123, 44, 191, 0.5);
+        }
+        .links a.primary {
+            background: #3776ab;
+            color: #fff;
+            border-color: #3776ab;
+        }
+        .section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            color: #00d4ff;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(0, 212, 255, 0.3);
+        }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        th { color: #7b2cbf; }
+        code { color: #00d4ff; }
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            header h1 { font-size: 1.6em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="../index.html">← 코드 레퍼런스로</a>
+        <header>
+            <h1>공식 샘플문항</h1>
+            <p>실제 시험과 같은 14문항 · 빈칸/오류정정/Keras</p>
+        </header>
+
+        <div class="note">
+            기존 모의고사 30회는 파이프라인 연습용입니다. 시험 직전에는 아래 두 세트를 90분씩 푸는 것이 가장 가깝습니다.
+            노트북과 CSV는 <strong>같은 폴더</strong>에서 여세요.
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h2>회귀 · 내비게이션 ETA</h2>
+                <p class="meta">
+                    데이터: <code>signal_data.csv</code> (10,000행)<br>
+                    타겟: <code>Time_Driving</code><br>
+                    스케일링: RobustScaler · 지표: MAE
+                </p>
+                <div class="links">
+                    <a class="primary" href="regression/problem.ipynb">문제 노트북</a>
+                    <a href="regression/solution.ipynb">해설</a>
+                    <a href="regression/answer_key.md">정답표</a>
+                    <a href="regression/signal_data.csv">CSV</a>
+                </div>
+            </div>
+            <div class="card">
+                <h2>분류 · 와인 품질</h2>
+                <p class="meta">
+                    데이터: <code>wine_quality_data.csv</code> (90,784행)<br>
+                    타겟: <code>Grade</code> (Pass/Fail)<br>
+                    스케일링: StandardScaler · 지표: Accuracy
+                </p>
+                <div class="links">
+                    <a class="primary" href="classification/problem.ipynb">문제 노트북</a>
+                    <a href="classification/solution.ipynb">해설</a>
+                    <a href="classification/answer_key.md">정답표</a>
+                    <a href="classification/wine_quality_data.csv">CSV</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>시험 구성</h2>
+            <table>
+                <thead>
+                    <tr><th>영역</th><th>배점</th><th>핵심</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>데이터 분석</td><td>20</td><td>import, head(4), countplot / boxplot / jointplot</td></tr>
+                    <tr><td>데이터 전처리</td><td>30</td><td>이상치, dropna, get_dummies, split, scaler</td></tr>
+                    <tr><td>AI 모델링</td><td>50</td><td>DT/RF, feature_importances_, MAE/Accuracy, Keras + EarlyStopping</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
