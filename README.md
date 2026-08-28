@@ -8,7 +8,7 @@
 | **학습 기간** | 5주 (하루 90분) |
 | **총 학습 시간** | 약 45시간 |
 | **합격 기준** | 80점 이상 (2025년 기준) |
-| **모의고사** | 30회 (450문항) |
+| **모의고사** | 30회 (450문항) + 공식 샘플 분류/회귀 |
 
 ---
 
@@ -27,6 +27,10 @@ AICE_Associate/
 ├── templates/                      # 시험용 템플릿
 │   ├── ml_pipeline.py              # ML 파이프라인 템플릿
 │   └── quick_reference.md          # 빠른 참조 치트시트
+│
+├── official_samples/               # ⭐ 공식 샘플문항 (시험 형식)
+│   ├── classification/             # 와인 품질 분류
+│   └── regression/                 # 내비게이션 ETA 회귀
 │
 └── mock_exams/                     # 모의고사 30회
     ├── level_1_basic/              # 🟢 기초 (1-10회)
@@ -83,6 +87,20 @@ AICE_Associate/
 • 80점 이상 목표
 • 최종 점검
 ```
+
+---
+
+## ⭐ 공식 샘플문항 (시험과 같은 형식)
+
+기존 모의고사 30회는 15문항 파이프라인 연습입니다. **공식 샘플은 14문항, 빈칸 채우기, 오류 정정, Keras 토폴로지**입니다. 시험 직전에는 아래 두 세트를 90분씩 푸세요.
+
+| 유형 | 시나리오 | 데이터 | 노트북 |
+|------|----------|--------|--------|
+| 회귀 | 내비게이션 도착시간 | `signal_data.csv` | `official_samples/regression/problem.ipynb` |
+| 분류 | 와인 품질등급 | `wine_quality_data.csv` | `official_samples/classification/problem.ipynb` |
+
+- 해설: 각 폴더의 `solution.ipynb` / `answer_key.md`
+- 안내 페이지: [`official_samples/index.html`](official_samples/index.html)
 
 ---
 
@@ -180,6 +198,7 @@ jupyter notebook
 1. `basics/` 폴더의 기초 노트북 학습
 2. `templates/` 폴더의 템플릿 숙지
 3. `mock_exams/level_1_basic/` 부터 순차적으로 풀이
+4. 시험 직전 `official_samples/` 분류·회귀 샘플을 실전처럼 풀이
 
 ---
 

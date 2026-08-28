@@ -355,4 +355,116 @@ print(f"Accuracy: {acc:.4f}, F1: {f1:.4f}")
 
 ---
 
+## 12. 공식 샘플문항 패턴 (시험 직전)
+
+`official_samples/` 분류·회귀에서 반복되는 코드입니다.
+
+### 12-1. 시각화
+
+```python
+sns.countplot(data=df, x='Address1')
+sns.boxplot(data=data, x='Grade', y='FE_points_winery')
+sns.jointplot(data=df, x='Time_Driving', y='Speed_Per_Hour')
+
+fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(15, 6))
+sns.countplot(data=data, x='col', ax=axes[0])
+sns.histplot(data=data, x='score', hue='Grade', ax=axes[1])
+axes[0].set_title('Wine Count')
+axes[1].set_title('Winery Score')
+```
+
+### 12-2. 이상치 / 결측치
+
+```python
+# IQR 펜스 밖 행 삭제
+q1 = data['col'].quantile(0.25)
+q3 = data['col'].quantile(0.75)
+iqr = q3 - q1
+lower_fence = q1 - 1.5 * iqr
+upper_fence = q3 + 1.5 * iqr
+data_temp = data.drop(data[(data['col'] > upper_fence) | (data['col'] < lower_fence)].index, axis=0)
+
+# 임계값 이상치
+df_temp = df[df.Speed_Per_Hour < 300]
+
+# 결측치
+print(df_temp.isnull().sum())
+df_na = df_temp.dropna()
+```
+
+### 12-3. 인코딩 / 분할 / 스케일링
+
+```python
+df_preset = pd.get_dummies(data=df_na, columns=['Address1', 'Address2'])
+
+X_train, X_valid, y_train, y_valid = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+# 분류 + 비율 유지
+# train_test_split(X, y, test_size=0.3, random_state=7, stratify=y)
+
+from sklearn.preprocessing import RobustScaler, StandardScaler
+rs = RobustScaler()
+X_train = rs.fit_transform(X_train)
+X_valid = rs.transform(X_valid)
+round(np.max(X_valid))
+```
+
+### 12-4. DT / RF / 변수중요도 / 지표
+
+```python
+from sklearn.tree import DecisionTreeRegressor, DecisionTreeClassifier
+from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier
+from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import mean_absolute_error, accuracy_score
+
+dt = DecisionTreeRegressor(max_depth=5, min_samples_split=3, random_state=120)
+dt.fit(X_train, y_train)
+
+gs_rf = GridSearchCV(
+    RandomForestClassifier(random_state=7),
+    {"n_estimators": [100, 200, 500], "max_depth": [5, 10, 20], "min_samples_split": [2, 5, 10]},
+    cv=5, scoring="accuracy", n_jobs=-1
+)
+gs_rf.fit(X_train, y_train)
+
+fi = pd.DataFrame({
+    'feature': X.columns,
+    'importance': rf.feature_importances_  # GridSearch면 gs_rf.best_estimator_.feature_importances_
+}).sort_values('importance', ascending=False)[:10]
+sns.barplot(x='importance', y='feature', data=fi, palette='viridis')
+
+# 회귀는 MAE가 작을수록, 분류는 Accuracy가 클수록 우수
+```
+
+### 12-5. Keras + 학습곡선
+
+```python
+# 회귀: selu 히든 + linear 출력, patience=9, mse
+# 분류: relu 히든 + sigmoid 출력, patience=14, binary_crossentropy
+estop = EarlyStopping(monitor='val_loss', patience=9)
+model.compile(optimizer='adam', loss='mean_squared_error', metrics=['mse'])
+history = model.fit(X_train, y_train, batch_size=128, epochs=50,
+                    validation_data=(X_valid, y_valid), callbacks=[estop])
+
+plt.plot(history.history["mse"])
+plt.plot(history.history["val_mse"])
+plt.title("Model MSE")
+plt.xlabel("Epoch")
+plt.ylabel("MSE")
+plt.legend(['mse', 'val_mse'])
+```
+
+자주 나오는 오류 정정:
+
+| 버그 | 고치기 |
+|------|--------|
+| `df.drop()` / `isnull().total()` | `dropna()` / `isnull().sum()` |
+| `rs.transform(X_train)` only | train은 `fit_transform`, valid는 `transform` |
+| `rf.importances` / `sort_index` | `feature_importances_` / `sort_values` |
+| `sklearn_metrics` / `mean.absolute` | `sklearn.metrics` / `mean_absolute_error` |
+| `pd.get_dummy` / `column=` | `get_dummies` / `columns=` |
+
+---
+
 **Good Luck! 🍀**
