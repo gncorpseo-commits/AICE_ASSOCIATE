@@ -61,22 +61,18 @@ NOTICE = """#### **<span style="color:red">[유의사항]</span>**
 ---"""
 
 FONT_HELPER = """import numpy as np
+import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-import matplotlib.font_manager as fm
 import warnings
 warnings.filterwarnings('ignore')
-
-candidates = [
-    'NanumGothic', 'NanumGothicCoding', 'NanumBarunGothic',
-    'Malgun Gothic', 'AppleGothic', 'Noto Sans CJK KR'
-]
-available = {f.name for f in fm.fontManager.ttflist}
-for name in candidates:
-    if name in available:
-        plt.rc('font', family=name)
-        break
-plt.rcParams['axes.unicode_minus'] = False"""
+plt.rcParams['axes.unicode_minus'] = False
+# Do not scan fontManager.ttflist — on Windows the first run can hang for minutes.
+try:
+    plt.rcParams['font.family'] = 'Malgun Gothic'
+except Exception:
+    pass
+print('imports ok')"""
 
 TF_HELPER = """import tensorflow as tf
 from tensorflow.keras.models import Sequential, load_model

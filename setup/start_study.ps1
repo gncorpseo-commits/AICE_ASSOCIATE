@@ -56,11 +56,25 @@ function Find-Python {
 }
 
 function Invoke-Python {
-  param($Py, [string[]]$Args)
-  $all = @()
-  if ($Py.PrefixArgs) { $all += $Py.PrefixArgs }
-  $all += $Args
-  & $Py.File @all
+  param(
+    [Parameter(Mandatory = $true)]$Py,
+    [string[]]$PythonArgs = @()
+  )
+  # Do not name a parameter $Args — it collides with PowerShell's automatic $args
+  # and would run `py -3.12` with no extra flags (interactive REPL).
+  $all = New-Object System.Collections.Generic.List[string]
+  foreach ($item in @($Py.PrefixArgs)) {
+    if ($null -ne $item -and "$item" -ne "") {
+      [void]$all.Add([string]$item)
+    }
+  }
+  foreach ($item in @($PythonArgs)) {
+    if ($null -ne $item -and "$item" -ne "") {
+      [void]$all.Add([string]$item)
+    }
+  }
+  Write-Host ("  {0} {1}" -f $Py.File, ($all -join " "))
+  & $Py.File @($all.ToArray())
   return $LASTEXITCODE
 }
 
@@ -116,11 +130,15 @@ if (-not $py) {
 }
 
 Write-Host ("Using: {0} {1}" -f $py.File, ($py.PrefixArgs -join " "))
-Invoke-Python -Py $py -Args @("--version") | Out-Host
+$code = Invoke-Python -Py $py -PythonArgs @("--version")
+if ($code -ne 0) {
+  Write-Host "Could not run Python --version."
+  exit 1
+}
 
 Write-Host "[2/3] Installing study libraries (first run can take several minutes)..."
-$code = Invoke-Python -Py $py -Args @("-m", "pip", "install", "--upgrade", "pip")
-$code = Invoke-Python -Py $py -Args @(
+$code = Invoke-Python -Py $py -PythonArgs @("-m", "pip", "install", "--upgrade", "pip")
+$code = Invoke-Python -Py $py -PythonArgs @(
   "-m", "pip", "install",
   "numpy", "pandas", "matplotlib", "seaborn",
   "scikit-learn", "jupyter", "notebook", "ipykernel"
@@ -131,9 +149,9 @@ if ($code -ne 0) {
 }
 
 Write-Host "Installing TensorFlow (needed for Q13-Q14, optional if it fails)..."
-Invoke-Python -Py $py -Args @("-m", "pip", "install", "tensorflow", "xgboost") | Out-Null
+Invoke-Python -Py $py -PythonArgs @("-m", "pip", "install", "tensorflow", "xgboost")
 
-Invoke-Python -Py $py -Args @("-m", "ipykernel", "install", "--user", "--name", "aice", "--display-name", "Python (AICE)") | Out-Null
+Invoke-Python -Py $py -PythonArgs @("-m", "ipykernel", "install", "--user", "--name", "aice", "--display-name", "Python (AICE)") | Out-Null
 
 $nbDir = Join-Path $root "official_samples"
 Write-Host "[3/3] Opening Jupyter at official_samples ..."
@@ -141,5 +159,5 @@ Write-Host "Open: regression/problem.ipynb  then  classification/problem.ipynb"
 Write-Host "Stop Jupyter with Ctrl+C in this window."
 Write-Host ""
 
-$code = Invoke-Python -Py $py -Args @("-m", "notebook", "--notebook-dir=$nbDir")
+$code = Invoke-Python -Py $py -PythonArgs @("-m", "notebook", "--notebook-dir=$nbDir")
 exit $code

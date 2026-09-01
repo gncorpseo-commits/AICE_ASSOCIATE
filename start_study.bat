@@ -4,6 +4,7 @@ cd /d "%~dp0"
 echo.
 echo === AICE Associate 학습 시작 ===
 echo 첫 설치는 5~15분 걸릴 수 있습니다. 창을 닫지 마세요.
+echo 정상: pip 설치 로그가 보입니다.  >>>  입력창이 나오면 중단하세요.
 echo.
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0setup\start_study.ps1"
 if errorlevel 1 (
