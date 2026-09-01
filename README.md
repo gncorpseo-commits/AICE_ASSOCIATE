@@ -8,7 +8,7 @@
 | **학습 기간** | 5주 (하루 90분) |
 | **총 학습 시간** | 약 45시간 |
 | **합격 기준** | 80점 이상 (2025년 기준) |
-| **모의고사** | 30회 (450문항) + 공식 샘플 분류/회귀 |
+| **모의고사** | 30회 (14문항 × 30 = 420문항, 공식 샘플 형식) + 공식 샘플 분류/회귀 |
 
 ---
 
@@ -32,11 +32,12 @@ AICE_Associate/
 │   ├── classification/             # 와인 품질 분류
 │   └── regression/                 # 내비게이션 ETA 회귀
 │
-└── mock_exams/                     # 모의고사 30회
+└── mock_exams/                     # 모의고사 30회 (공식 샘플 형식 14문항)
     ├── level_1_basic/              # 🟢 기초 (1-10회)
     ├── level_2_intermediate/       # 🟡 중급 (11-20회)
     ├── level_3_advanced/           # 🔴 실전 (21-30회)
-    └── data/                       # 30개 데이터셋
+    ├── data/                       # 30개 데이터셋
+    └── answer_keys.md              # 단답 정답표
 ```
 
 ---
@@ -63,9 +64,9 @@ AICE_Associate/
 📁 mock_exams/level_2_intermediate/
 
 학습 내용:
-• 회귀: LinearRegression, RandomForestRegressor
-• 분류: LogisticRegression, RandomForestClassifier
-• 평가: RMSE, R², Accuracy, F1
+• 회귀: DecisionTreeRegressor, RandomForestRegressor, MAE, Keras
+• 분류: DecisionTreeClassifier, RandomForestClassifier, Accuracy, Keras
+• 빈칸 채우기 / 오류 정정 패턴
 
 모의고사:
 • mock_11 ~ mock_20 (하루 1회)
@@ -90,9 +91,11 @@ AICE_Associate/
 
 ---
 
-## ⭐ 공식 샘플문항 (시험과 같은 형식)
+## ⭐ 공식 샘플 + 모의고사 (같은 시험 형식)
 
-기존 모의고사 30회는 15문항 파이프라인 연습입니다. **공식 샘플은 14문항, 빈칸 채우기, 오류 정정, Keras 토폴로지**입니다. 시험 직전에는 아래 두 세트를 90분씩 푸세요.
+모의고사 30회와 공식 샘플은 모두 **14문항, 빈칸, 오류 정정, Keras**입니다.
+
+시험 직전에는 공식 샘플 2세트를 90분씩 푸세요.
 
 | 유형 | 시나리오 | 데이터 | 노트북 |
 |------|----------|--------|--------|
@@ -100,11 +103,12 @@ AICE_Associate/
 | 분류 | 와인 품질등급 | `wine_quality_data.csv` | `official_samples/classification/problem.ipynb` |
 
 - 해설: 각 폴더의 `solution.ipynb` / `answer_key.md`
+- 모의고사 해설: `mock_XX_name_solution.ipynb` / [`mock_exams/answer_keys.md`](mock_exams/answer_keys.md)
 - 안내 페이지: [`official_samples/index.html`](official_samples/index.html)
 
 ---
 
-## 📊 모의고사 구성 (15문항 × 30회 = 450문항)
+## 📊 모의고사 구성 (14문항 × 30회 = 420문항)
 
 ### 🟢 Level 1: 기초 (1-10회)
 
