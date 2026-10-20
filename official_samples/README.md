@@ -33,17 +33,20 @@ KT AICE Associate 실기시험과 **같은 형식**의 공식 샘플입니다.
 
 ## 실행 방법
 
-노트북과 CSV는 **같은 폴더**에서 열어야 합니다.
+프로젝트 루트에서 (Windows):
 
-```bash
-# 회귀
-jupyter notebook official_samples/regression/problem.ipynb
-
-# 분류
-jupyter notebook official_samples/classification/problem.ipynb
+```powershell
+git clone https://github.com/gncorpseo-commits/AICE_ASSOCIATE.git AICE_Associate_samples
+cd AICE_Associate_samples
+py -3.12 -m pip install numpy pandas matplotlib seaborn scikit-learn jupyter notebook ipykernel tensorflow
+py -3.12 -m notebook
 ```
 
-Colab을 쓰면 CSV를 함께 업로드하거나, 같은 폴더의 raw URL로 `pd.read_csv` 하세요.
+브라우저가 열리면 `official_samples/regression/problem.ipynb` 부터 풉니다. `>>>` 가 보이면 창을 닫고 위 명령을 쓰세요. `start_study.bat` 은 쓰지 마세요.
+
+노트북과 CSV는 **같은 폴더**에 있습니다. Colab을 쓰면 CSV를 함께 업로드하세요.
+
+전체 안내: [`../START_HERE_Windows.md`](../START_HERE_Windows.md)
 
 ## 주의
 
