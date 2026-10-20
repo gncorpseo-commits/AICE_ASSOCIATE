@@ -9,6 +9,48 @@
 | **총 학습 시간** | 약 45시간 |
 | **합격 기준** | 80점 이상 (2025년 기준) |
 | **모의고사** | 30회 (14문항 × 30 = 420문항, 공식 샘플 형식) + 공식 샘플 분류/회귀 |
+| **저장소** | https://github.com/gncorpseo-commits/AICE_ASSOCIATE |
+
+---
+
+## 다른 컴퓨터에서 시작 (Windows)
+
+Git과 [Python 3.12](https://www.python.org/downloads/)를 설치하세요. Python 설치 화면에서 **Add python.exe to PATH** 를 체크합니다.
+
+PowerShell에서:
+
+```powershell
+git clone https://github.com/gncorpseo-commits/AICE_ASSOCIATE.git AICE_Associate_samples
+cd AICE_Associate_samples
+py -3.12 -m pip install numpy pandas matplotlib seaborn scikit-learn jupyter notebook ipykernel tensorflow
+py -3.12 -m notebook
+```
+
+첫 pip는 5~15분 걸릴 수 있습니다. 정상일 때는 다운로드 로그가 보입니다. `>>>` 가 나오면 창을 닫고 위 `py -3.12 -m` 명령을 다시 쓰세요. `start_study.bat` 은 쓰지 마세요.
+
+브라우저가 열리면:
+
+1. `official_samples/regression/problem.ipynb` — 내비게이션 회귀 (시험 직전용)
+2. `mock_exams/level_1_basic/mock_01_delivery.ipynb` — 모의고사 1회부터 학습
+3. 채점은 같은 폴더의 `*_solution.ipynb` 또는 `mock_exams/answer_keys.md`
+
+같은 노트북을 다시 빈칸으로 되돌리려면:
+
+```powershell
+git checkout -- official_samples/regression/problem.ipynb
+git checkout -- mock_exams/level_1_basic/mock_01_delivery.ipynb
+```
+
+이미 받아 둔 폴더가 있으면 `git clone` 대신 `cd` 후 `git pull` 하면 됩니다.
+
+확인:
+
+```powershell
+py -3.12 --version
+git --version
+```
+
+자세한 한 장 안내: [`START_HERE_Windows.md`](START_HERE_Windows.md)
 
 ---
 
@@ -177,43 +219,12 @@ AICE_Associate/
 
 ---
 
-## 🚀 시작하기
+## 학습 순서
 
-### Windows에서 공식 샘플 바로 풀기
-프로젝트 폴더에서 `start_study.bat` 을 실행하세요. Python이 없으면 설치하고 Jupyter를 엽니다.
-
-```powershell
-cd C:\project\GN_Build_Up\AICE_Associate_samples
-git pull
-.\start_study.bat
-```
-
-자세한 설명: [`START_HERE_Windows.md`](START_HERE_Windows.md)
-
-### 1. 런처로 실행 (추천)
-- **Windows 런처 (exe)**: `launcher/windows/dist/AICE_Launcher.exe`
-- **macOS/Linux 런처**: `launcher/unix/run.sh`
-  - 실행 권한: `chmod +x launcher/unix/run.sh`
-  - 실행: `./launcher/unix/run.sh`
-  - Windows Smart App Control이 exe를 차단하면 PowerShell/BAT 스크립트를 사용하세요.
-
-### 2. 직접 실행 (터미널)
-```bash
-pip install -r requirements.txt
-python -m http.server 8000
-python -m uvicorn server.app:app --host 0.0.0.0 --port 8001
-```
-
-### 3. Jupyter Notebook 실행
-```bash
-jupyter notebook
-```
-
-### 4. 학습 순서
-1. `basics/` 폴더의 기초 노트북 학습
-2. `templates/` 폴더의 템플릿 숙지
-3. `mock_exams/level_1_basic/` 부터 순차적으로 풀이
-4. 시험 직전 `official_samples/` 분류·회귀 샘플을 실전처럼 풀이
+1. `basics/` 폴더의 기초 노트북
+2. `templates/quick_reference.md` 공식 샘플 패턴
+3. `mock_exams/level_1_basic/` 부터 순차 풀이
+4. 시험 직전 `official_samples/` 분류·회귀를 90분씩
 
 ---
 
